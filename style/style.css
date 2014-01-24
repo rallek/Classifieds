@@ -1,0 +1,113 @@
+/* view pages */
+div#z-maincontent.z-module-classifieds table tbody tr td {
+    vertical-align: top;
+}
+
+/* display pages */
+.classifieds-display.with-rightbox div.z-panel-content {
+    float: left;
+    width: 79%;
+}
+.classifieds-display div.classifieds-rightbox {
+    float: right;
+    margin: 0 1em;
+    padding: .5em;
+    width: 20%;
+    border: 1px solid #666;
+}
+
+.classifieds-contactbox {
+    float: right;
+    width: 25%;
+    background: linear-gradient(#FAFAFA, #F2F2F2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #333333;
+    margin: 0 0 1em;
+    
+}
+
+.classifieds-picturebox {
+    float: left;
+    width: 66%;
+	height: 200px;
+    background: linear-gradient(#FAFAFA, #F2F2F2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    color: #333333;
+    margin: 0 0 1em;
+    padding: 0.5em 1em;
+	}
+
+	.classifieds-descriptionbox {
+    clear: left;
+    width: 66%;
+    background: linear-gradient(#FAFAFA, #F2F2F2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #333333;
+    margin: 0 0 1em;
+    padding: 0.5em 1em;
+	}
+
+	
+.classifieds-contactbox legend {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    color: #000000;
+    font-size: 1.25em;
+    font-weight: normal;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.8);
+	/* padding: 0.5em; */
+}
+
+.classifieds-display div.classifieds-rightbox h3 {
+    color: #333;
+    font-weight: 400;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.classifieds-display div.classifieds-rightbox p.managelink {
+    margin-left: 18px;
+}
+/* validation */
+div.z-formrow input.required, div.z-formrow textarea.required {
+    border: 1px solid #00a8e6;
+}
+div.z-formrow input.validation-failed, div.z-formrow textarea.validation-failed {
+    border: 1px solid #f30;
+    color: #f30;
+}
+div.z-formrow input.validation-passed, div.z-formrow textarea.validation-passed {
+    border: 1px solid #0c0;
+    color: #000;
+}
+
+.validation-advice {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #f90;
+    color: #fff;
+    font-weight: 700;
+}
+div.classifieds-view form.classifieds-quicknav {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+}
+
+div.classifieds-view form.classifieds-quicknav fieldset {
+    padding: 3px 10px;
+    margin-bottom: 0;
+}
+
+div.classifieds-view form.classifieds-quicknav fieldset h3 {
+    margin-top: 0;
+    display: none;
+}
+
+div.classifieds-view form.classifieds-quicknav fieldset #num {
+    width: 50px;
+    text-align: right;
+}
