@@ -1,0 +1,238 @@
+application Weekly {
+	documentation "a module for a weekly rota"
+	vendor Koester
+	author "Ralf Koester"
+	email "ralf@familie-koester.de"
+	url "http://zikula.de"
+	version "0.2.0"
+	prefix weekly
+	targetCoreVersion ZK135
+	modelLayer {
+		modelContainer Model {
+			numExampleRows 0
+			entities {
+				entity event leading {
+					documentation "the name of the event"
+					nameMultiple ^events
+					incoming ( "kind.event",
+					"location.event",
+					"leader.event",
+					"organisator.event" )
+					fields {
+						datetime eventBegin leading readonly {
+							defaultValue "2013-12-17 00:00:00"
+							mandatory false
+						},
+						string eventName  {
+							defaultValue ""
+						},
+						list eventDay {
+							items {
+								listItem Monday ( "2013-12-16 00:00:00" ) {
+									image ""
+								},
+								listItem Tuesday ( "2013-12-17 00:00:00" ),
+								listItem Wednesday ( "2013-12-18 00:00:00" ),
+								listItem Thursday ( "2013-12-19 00:00:00" ),
+								listItem Friday ( "2013-12-20 00:00:00" ),
+								listItem Saturday ( "2013-12-21 00:00:00" ),
+								listItem Sunday ( "2013-12-22 00:00:00" )
+							}
+						},
+						string eventBeginText fixed {
+							documentation "The time when the event begins"
+							defaultValue "00:00"
+							minLength 5
+							regexp "/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/"
+							length 5
+						},
+						integer eventDuration {
+							documentation "The time how long the event takes normaly (in minutes)"
+							defaultValue "60"
+						},
+						string eventMessage {
+							documentation "be so kind and write a date and not only \"next week\""
+							mandatory false
+						},
+						text eventText {
+							mandatory false
+						},
+						integer maxParticipants {
+							defaultValue "4"
+							mandatory false
+						},
+						integer currentParticipants {
+							mandatory false
+							maxValue 10
+						},
+						boolean active ajaxTogglability {
+							documentation "if you deactivate the event is not shown in the user view"
+							defaultValue ^true
+							mandatory false
+						}
+					}
+				},
+				entity leader {
+					nameMultiple leaders
+					outgoing ( "leader.event" )
+					fields {
+						string leaderName leading unique,
+						text leaderDescription {
+							mandatory false
+						},
+						upload leaderPicture {
+							mandatory false
+							allowedFileSize 102400
+						}
+					}
+				},
+				entity organisator {
+					nameMultiple organisators
+					outgoing ( "organisator.event" )
+					fields {
+						string organisatorName leading {
+							defaultValue ""
+						},
+						text organisatorText {
+							mandatory false
+						},
+						upload organisatorPicture {
+							mandatory false
+							allowedFileSize 102400
+						}
+					}
+				},
+				entity kind {
+					nameMultiple kind
+					outgoing ( "kind.event" )
+					fields {
+						string kindName leading,
+						text kindText {
+							mandatory false
+						},
+						upload kindPicture {
+							mandatory false
+						}
+					}
+				},
+				entity location {
+					nameMultiple locations
+					outgoing ( "location.event" )
+					fields {
+						string locationName leading,
+						text locationText {
+							mandatory false
+						},
+						upload locationPicture {
+							mandatory false
+						}
+					}
+				}
+			}
+			relations {
+				one2many bidirectional {
+					source kind
+					sourceAlias kind
+					target event
+					targetAlias event
+					cascade PERSIST
+					cascadeReverse PERSIST
+				},
+				one2many bidirectional {
+					source location
+					sourceAlias location
+					target event
+					targetAlias event
+					cascade PERSIST
+					cascadeReverse PERSIST
+				},
+				one2many bidirectional {
+					source leader
+					sourceAlias leader
+					target event
+					targetAlias event
+					cascade PERSIST
+					cascadeReverse PERSIST
+				},
+				one2many bidirectional {
+					source organisator
+					sourceAlias organisator
+					target event
+					targetAlias event
+					cascade PERSIST
+					cascadeReverse PERSIST
+					orderBy ""
+				}
+			}
+			variables {
+				varContainer Variables {
+					vars {
+						intVar pictureSize {
+							documentation "in bytes"
+							value "102400"
+						},
+						boolVar showLeader {
+							documentation "we can switch the usage of leader table off"
+							value ^true
+						},
+						boolVar showOrganisator {
+							documentation "we can switch the usage of Organisator table off"
+							value ^true
+						},
+						boolVar showKind {
+							documentation "we can switch the usage of kind table off"
+							value ^true
+						},
+						boolVar showLocation {
+							documentation "we can switch the usage of location table off"
+							value ^true
+						},
+						boolVar showParticipants {
+							documentation "we can switch the usage of participants off"
+							value ^true
+						},
+						intVar maxParticipantsDefault,
+						boolVar allowDeactivating {
+							documentation "we can allow to deactivate events"
+							value ^false
+						}
+					}
+				}
+			}
+		}
+	}
+	controllerLayer {
+		controllerContainer Controller {
+			modelContext ( "Weekly.Model" )
+			processViews "Weekly.View"
+			controllers {
+				adminController Admin {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display,
+						editAction Edit
+					}
+				},
+				userController User {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display,
+						editAction Edit
+					}
+				},
+				ajaxController Ajax {
+					actions {
+						mainAction Main
+					}
+				}
+			}
+		}
+	}
+	viewLayer {
+		viewContainer View {
+			controller "Weekly.Controller"
+		}
+	}
+}
