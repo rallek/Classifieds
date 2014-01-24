@@ -1,0 +1,134 @@
+application Classifieds {
+	documentation "With classifieds you can manage your own market."
+	vendor RK
+	author "Ralf Koester"
+	email "ralf@familie-koester.de"
+	url "http://support.zikula.de"
+	version "0.2.0"
+	prefix clfs
+	modelPath ""
+	targetCoreVersion ZK135
+	modelLayer {
+		modelContainer Model {
+			numExampleRows 0
+			entities {
+				entity classified leading categorisable categorisableMultiSelection {
+					documentation "a module for goods you want to sell or you want to buy like a small version of ebay"
+					nameMultiple classifieds
+					workflow NONE
+					hasArchive true
+					hasTray true
+					ownerPermission true
+					fields {
+						string title leading {
+							defaultValue ""
+						},
+						list kind  {
+							items {
+								default listItem offer ( offer ),
+								listItem search ( search )
+							}
+						},
+						text description {
+							documentation "the description of your offer or what you are looking for"
+							defaultValue ""
+						},
+						decimal price  currency {
+							documentation "The price you are willing to pay or what you want to get for your offer"
+							defaultValue ""
+							mandatory false
+						},
+						email ^email {
+							documentation "the contact to your classified"
+							mandatory true
+						},
+						string fon {
+							documentation "your phone number for requests. It will be shown public."
+							defaultValue ""
+							mandatory false
+						},
+						upload picture {
+							documentation "a picture oft your classified"
+							defaultValue ""
+							mandatory false
+							subFolderName clsf_pict
+							allowedFileSize 102400
+						},
+						datetime startdate  startDate {
+							documentation "the date when your classified should appear. Normaly right now."
+							defaultValue now
+							mandatory false
+							timestampable CREATE
+						},
+						datetime enddate  future endDate {
+							documentation "the date when the classified shoud stop. This will be set automatically."
+							defaultValue ""
+						},
+						boolean terms ajaxTogglability {
+							documentation "You have to accept the terms and conditions. Otherwhise your classified will not published."
+							defaultValue ^false
+						}
+					}
+				}
+			}
+			variables {
+				varContainer Variables {
+					vars {
+						intVar defaultperiod {
+							documentation "Standardtage für die Laufzeit der Kleinanzeige"
+							value "60"
+						},
+						intVar picmaxfilesize {
+							documentation "erlaubte maximalgröße von Bildern in Byte (z.B. 102400 für 100kb)"
+							value "204800"
+						},
+						textVar allowedextension {
+							value "gif, jpeg, jpg, png"
+						},
+						textVar terms_link {
+							documentation "here we need a link to the terms and conditions"
+							value "index.php"
+							maxLength 255
+						}
+					}
+				}
+			}
+		}
+	}
+	controllerLayer {
+		controllerContainer Controller {
+			modelContext ( "Classifieds.Model" )
+			processViews "Classifieds.View"
+			controllers {
+				adminController Admin {
+					actions {
+						mainAction Main,
+						displayAction Display,
+						viewAction View,
+						deleteAction Delete
+					}
+				},
+				ajaxController Ajax {
+					actions {
+						mainAction Main,
+						displayAction Display
+					}
+				},
+				userController User {
+					actions {
+						mainAction Main,
+						viewAction View,
+						displayAction Display,
+						editAction Edit
+					}
+				}
+			}
+		}
+	}
+	viewLayer {
+		viewContainer View {
+			documentation "View geht noch nicht"
+			controller "Classifieds.Controller"
+		}
+	}
+}
