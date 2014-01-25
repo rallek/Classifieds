@@ -1,10 +1,10 @@
 application Classifieds {
 	documentation "With classifieds you can manage your own market."
-	vendor RK
+	vendor Rallek
 	author "Ralf Koester"
 	email "ralf@familie-koester.de"
 	url "http://support.zikula.de"
-	version "0.2.0"
+	version "0.2.5"
 	prefix clfs
 	modelPath ""
 	targetCoreVersion ZK135
@@ -26,7 +26,8 @@ application Classifieds {
 						list kind  {
 							items {
 								default listItem offer ( offer ),
-								listItem search ( search )
+								listItem search ( search ),
+								listItem exchange ( exchange )
 							}
 						},
 						text description {
@@ -54,13 +55,17 @@ application Classifieds {
 							subFolderName clsf_pict
 							allowedFileSize 102400
 						},
-						datetime startdate  startDate {
+						upload picture2 {
+							documentation "you can add another picture"
+							mandatory false
+						},
+						datetime classifiedStart  startDate {
 							documentation "the date when your classified should appear. Normaly right now."
 							defaultValue now
 							mandatory false
 							timestampable CREATE
 						},
-						datetime enddate  future endDate {
+						datetime classifiedEnd  future endDate {
 							documentation "the date when the classified shoud stop. This will be set automatically."
 							defaultValue ""
 						},
@@ -74,21 +79,60 @@ application Classifieds {
 			variables {
 				varContainer Variables {
 					vars {
-						intVar defaultperiod {
+						intVar defaultPeriod {
 							documentation "Standardtage für die Laufzeit der Kleinanzeige"
 							value "60"
 						},
-						intVar picmaxfilesize {
-							documentation "erlaubte maximalgröße von Bildern in Byte (z.B. 102400 für 100kb)"
-							value "204800"
-						},
-						textVar allowedextension {
-							value "gif, jpeg, jpg, png"
-						},
-						textVar terms_link {
+						textVar termsLink {
 							documentation "here we need a link to the terms and conditions"
 							value "index.php"
 							maxLength 255
+						},
+						intVar pictureFileSize {
+							documentation "the maximum filesize of the uploaded pictures (in byte, e.g. 102400 for 100kb)"
+							value "204800"
+						},
+						textVar allowedExtension {
+							value "gif, jpeg, jpg, png"
+						},
+						intVar pictureHight {
+							documentation "maximal hight of the picture"
+							value "200"
+						},
+						intVar pictureWidth {
+							documentation "maximal width of the picture"
+							value "200"
+						},
+						intVar thumbPictureHight {
+							documentation "maximal hight of the picture thumbnail"
+							value "64"
+						},
+						intVar thumbPictureWidth {
+							documentation "maximal width of the picture thumbnail"
+							value "64"
+						},
+						filePathVar pictureDummy {
+							documentation "a dummy picture if the user is not uploading one"
+						},
+						boolVar useWatermark {
+							documentation "you can use the wartermark option for pictures"
+							value ^false
+						},
+						listVar typWatermark {
+							documentation "choose the kind of watermark"
+							value ^text
+							items {
+								listVarItem default ^text,
+								listVarItem picture
+							}
+						},
+						filePathVar watermarkPicture {
+							documentation "the picture for the overlay as a watermark"
+							value "/images/watermark.jpg"
+						},
+						textVar textWatermark {
+							documentation "text for watermarking (max 15 characters)"
+							maxLength 15
 						}
 					}
 				}
