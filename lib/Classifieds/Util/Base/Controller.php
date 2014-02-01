@@ -171,7 +171,7 @@ class Classifieds_Util_Base_Controller extends Zikula_AbstractBase
                         $basePath .= 'clsf_pict/';
                         break;
                     case 'picture2':
-                        $basePath .= 'picture2/';
+                        $basePath .= 'clsf_pict/';
                         break;
                 }
             break;

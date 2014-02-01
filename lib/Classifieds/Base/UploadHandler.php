@@ -44,7 +44,7 @@ class Classifieds_Base_UploadHandler
         $this->allowedObjectTypes = array('classified');
         $this->imageFileTypes = array('gif', 'jpeg', 'jpg', 'png', 'swf');
         $this->forbiddenFileTypes = array('cgi', 'pl', 'asp', 'phtml', 'php', 'php3', 'php4', 'php5', 'exe', 'com', 'bat', 'jsp', 'cfm', 'shtml');
-        $this->allowedFileSizes = array('classified' => array('picture' => 102400, 'picture2' => 0));
+        $this->allowedFileSizes = array('classified' => array('picture' => 102400, 'picture2' => 102400));
     }
 
     /**

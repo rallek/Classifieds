@@ -24,6 +24,7 @@ application Classifieds {
 		generateXmlTemplates false
 		generateJsonTemplates false
 		generateKmlTemplates false
+		generateOnlyBaseClasses true
 		generateTests false
 		skipFiles "README.md,CHANGELOG.md"
 	}
@@ -77,6 +78,8 @@ application Classifieds {
 						upload picture2 {
 							documentation "you can add another picture"
 							mandatory false
+							subFolderName clsf_pict
+							allowedFileSize 102400
 						},
 						datetime classifiedStart  startDate {
 							documentation "the date when your classified should appear. Normaly right now."

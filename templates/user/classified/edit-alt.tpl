@@ -96,7 +96,6 @@
             <span class="z-formnote"><a id="resetPicture2Val" href="javascript:void(0);" class="z-hide" style="clear:left;">{gt text='Reset to empty value'}</a></span>
             
                 <span class="z-formnote">{gt text='Allowed file extensions:'} <span id="picture2FileExtensions">gif, jpeg, jpg, png</span></span>
-            <span class="z-formnote">{gt text='Allowed file size:'} {$modvars.Classifieds.pictureFileSize|classifiedsGetFileSize:'':false:false}</span>
             {if $mode ne 'create'}
                 {if $classified.picture2 ne ''}
                     <span class="z-formnote">
@@ -136,7 +135,7 @@
             {if $mode ne 'create'}
                 {formdateinput group='classified' id='classifiedEnd' mandatory=true __title='Enter the classified end of the classified' includeTime=true cssClass='required validate-DateTime-future' }
             {else}
-                {formdateinput group='classified' id='classifiedEnd' mandatory=true __title='Enter the classified end of the classified' includeTime=true defaultValue='custom' cssClass='required validate-DateTime-future'  initDate="+`$modvars.Classifieds.defaultPeriod` day" }
+                {formdateinput group='classified' id='classifiedEnd' mandatory=true __title='Enter the classified end of the classified' includeTime=true defaultValue='custom' cssClass='required validate-DateTime-future'  initDate="+`$modvars.Classifieds.defaultPeriod` day"}
             {/if}
             
             <span class="z-formnote">{gt text='Note: this value must be in the future.'}</span>
