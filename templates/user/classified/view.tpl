@@ -70,7 +70,7 @@
     {foreach item='classified' from=$items}
         <tr class="{cycle values='z-odd, z-even'}">
             <td headers="hTitle" class="z-left">
-                {$classified.title}
+                <a href="{modurl modname='Classifieds' type='user' func='display' ot='classified' id=$classified.id}" title="{gt text='View detail page'}">{$classified.title}</a>
             </td>
             <td headers="hKind" class="z-left">
                 {$classified.kind|classifiedsGetListEntry:'classified':'kind'|safetext}

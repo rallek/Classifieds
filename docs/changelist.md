@@ -33,8 +33,8 @@ change
 into
 
 ````
-$this->allowedFileSizes['picture'] = ModUtil::getVar('Classiefieds', 'pictureFileSize' 102400);
-$this->allowedFileSizes['picture2'] = ModUtil::getVar('Classiefieds', 'pictureFileSize' 102400);
+$this->allowedFileSizes['picture'] = ModUtil::getVar('Classifieds', 'pictureFileSize', 102400);
+$this->allowedFileSizes['picture2'] = ModUtil::getVar('Classifieds', 'pictureFileSize', 102400);
 ````
 
 ## user view.tpl
@@ -53,6 +53,11 @@ deleting following colgroups th and td:
 * Terms
 
 extend the description ``{$classified.description|truncate:30:"..."}``
+
+make a link of the title:
+
+``<a href="{modurl modname='Classifieds' type='user' func='display' ot='classified' id=$classified.id}" title="{gt text='View detail page'}">{$classified.title}</a>
+ ``
 
 **ToDo** in a next step we will arrange all the table items propperly in one column
 
