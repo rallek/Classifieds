@@ -16,15 +16,24 @@ into
 ``$modvars.Classifieds.pictureFileSize`` instead of ``'102400'``
 
 copy from ``Classifieds\lib\Classifieds\Base\UploadHandler.php``
+
 to ``Classifieds\lib\Classifieds\UploadHandler.php``
+
 the section: 
-`````public function __construct()
+
+````
+public function __construct()
 {...
-}````
+}
+````
 change
+
 ````$this->allowedFileSizes = array('classified' => array('picture' => 102400, 'picture2' => 0));````
+
 into
-````$this->allowedFileSizes['picture'] = ModUtil::getVar('Classiefieds', 'pictureFileSize' 102400);
+
+````
+$this->allowedFileSizes['picture'] = ModUtil::getVar('Classiefieds', 'pictureFileSize' 102400);
 $this->allowedFileSizes['picture2'] = ModUtil::getVar('Classiefieds', 'pictureFileSize' 102400);
 ````
 
@@ -50,5 +59,5 @@ extend the description ``{$classified.description|truncate:30:"..."}``
 ### quickNav adjustments
 ````{include file='user/classified/view_quickNav.tpl' all=$all own=$own}{* see template file for available options *}````
 change to
-{include file='user/classified/view_quickNav.tpl' all=$all own=$own workflowStateFilter=false termsFilter=false pageSizeSelector=false}{* see template file for available options *}
+````{include file='user/classified/view_quickNav.tpl' all=$all own=$own workflowStateFilter=false termsFilter=false pageSizeSelector=false}{* see template file for available options *}````
  
