@@ -17,4 +17,12 @@
 class Classifieds_UploadHandler extends Classifieds_Base_UploadHandler
 {
     // feel free to add your upload handler enhancements here
+    public function __construct()
+    {
+        $this->allowedObjectTypes = array('classified');
+        $this->imageFileTypes = array('gif', 'jpeg', 'jpg', 'png', 'swf');
+        $this->forbiddenFileTypes = array('cgi', 'pl', 'asp', 'phtml', 'php', 'php3', 'php4', 'php5', 'exe', 'com', 'bat', 'jsp', 'cfm', 'shtml');
+        $this->allowedFileSizes['picture'] = ModUtil::getVar('Classiefieds', 'pictureFileSize' 102400);
+		$this->allowedFileSizes['picture2'] = ModUtil::getVar('Classiefieds', 'pictureFileSize' 102400);
+    }
 }
