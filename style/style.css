@@ -13,52 +13,7 @@ div#z-maincontent.z-module-classifieds table tbody tr td {
     margin: 0 1em;
     padding: .5em;
     width: 20%;
-    border: 1px solid #666;
-}
-
-.classifieds-contactbox {
-    float: right;
-    width: 25%;
-    background: linear-gradient(#FAFAFA, #F2F2F2) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 1px solid #DDDDDD;
-    border-radius: 3px;
-    color: #333333;
-    margin: 0 0 1em;
-    
-}
-
-.classifieds-picturebox {
-    float: left;
-    width: 66%;
-	height: 200px;
-    background: linear-gradient(#FAFAFA, #F2F2F2) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 1px solid #FFFFFF;
-    border-radius: 3px;
-    color: #333333;
-    margin: 0 0 1em;
-    padding: 0.5em 1em;
-	}
-
-	.classifieds-descriptionbox {
-    clear: left;
-    width: 66%;
-    background: linear-gradient(#FAFAFA, #F2F2F2) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 1px solid #DDDDDD;
-    border-radius: 3px;
-    color: #333333;
-    margin: 0 0 1em;
-    padding: 0.5em 1em;
-	}
-
-	
-.classifieds-contactbox legend {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border: 0 none;
-    color: #000000;
-    font-size: 1.25em;
-    font-weight: normal;
-    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.8);
-	/* padding: 0.5em; */
+    /*border: 1px solid #666;*/
 }
 
 .classifieds-display div.classifieds-rightbox h3 {

@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -16,33 +16,5 @@
  */
 class Classifieds_Util_Image extends Classifieds_Util_Base_Image
 {
-        public function getCustomPreset($objectType = '', $fieldName = '', $presetName = '', $context = '', $args = array())
-    {
-        $presetData = array(
-            'width'     => 100,      // thumbnail width in pixels
-            'height'    => 100,      // thumbnail height in pixels
-            'mode'      => 'inset',  // inset or outbound
-            'extension' => null      // file extension for thumbnails (jpg, png, gif; null for original file type)
-        );
-    
-        if ($presetName == $this->name . '_ajax_autocomplete') {
-            $presetData['width'] = 100;
-            $presetData['height'] = 80;
-        } elseif ($presetName == $this->name . '_relateditem') {
-            $presetData['width'] = 50;
-            $presetData['height'] = 40;
-        } elseif ($context == 'controllerAction') {
-            if ($args['action'] == 'view') {
-                $presetData['width'] = 64;
-                $presetData['height'] = 40;
-            } elseif ($args['action'] == 'display') {
-                $presetData['width'] = 250;
-                $presetData['height'] = 150;
-            }
-        }
-    
-        $preset = new SystemPlugin_Imagine_Preset($presetName, $presetData);
-    
-        return $preset;
-    }
+    // feel free to add your own convenience methods here
 }

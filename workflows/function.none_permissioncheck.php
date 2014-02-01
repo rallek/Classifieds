@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -25,6 +25,11 @@
  */
 function Classifieds_workflow_none_permissioncheck($obj, $permLevel, $currentUser, $actionId)
 {
+    // every user is allowed to perform automatic archiving 
+    if (PageUtil::getVar('ClassifiedsAutomaticArchiving', false) === true) {
+        return true;
+    }
+
     // calculate the permission component
     $objectType = $obj['_objectType'];
     $component = 'Classifieds:' . ucwords($objectType) . ':';

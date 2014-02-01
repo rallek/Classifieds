@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -27,57 +27,6 @@ class Classifieds_Controller_Base_Ajax extends Zikula_Controller_AbstractAjax
     public function main()
     {
         $this->throwForbiddenUnless(SecurityUtil::checkPermission($this->name . '::', '::', ACCESS_OVERVIEW), LogUtil::getErrorMsgPermission());
-    }
-    
-    /**
-     * This method provides a generic item detail view.
-     *
-     * @param string  $ot           Treated object type.
-     * @param string  $tpl          Name of alternative template (for alternative display options, feeds and xml output)
-     * @param boolean $raw          Optional way to display a template instead of fetching it (needed for standalone output)
-     *
-     * @return mixed Output.
-     */
-    public function display()
-    {
-        $controllerHelper = new Classifieds_Util_Controller($this->serviceManager);
-        
-        // parameter specifying which type of objects we are treating
-        $objectType = $this->request->query->filter('ot', 'classified', FILTER_SANITIZE_STRING);
-        $utilArgs = array('controller' => 'ajax', 'action' => 'display');
-        if (!in_array($objectType, $controllerHelper->getObjectTypes('controllerAction', $utilArgs))) {
-            $objectType = $controllerHelper->getDefaultObjectType('controllerAction', $utilArgs);
-        }
-        $this->throwForbiddenUnless(SecurityUtil::checkPermission($this->name . ':' . ucwords($objectType) . ':', '::', ACCESS_READ), LogUtil::getErrorMsgPermission());
-        $entityClass = $this->name . '_Entity_' . ucwords($objectType);
-        $repository = $this->entityManager->getRepository($entityClass);
-        $repository->setControllerArguments(array());
-        
-        $idFields = ModUtil::apiFunc($this->name, 'selection', 'getIdFields', array('ot' => $objectType));
-        
-        // retrieve identifier of the object we wish to view
-        $idValues = $controllerHelper->retrieveIdentifier($this->request, array(), $objectType, $idFields);
-        $hasIdentifier = $controllerHelper->isValidIdentifier($idValues);
-        $this->throwNotFoundUnless($hasIdentifier, $this->__('Error! Invalid identifier received.'));
-        
-        $entity = ModUtil::apiFunc($this->name, 'selection', 'getEntity', array('ot' => $objectType, 'id' => $idValues));
-        $this->throwNotFoundUnless($entity != null, $this->__('No such item.'));
-        unset($idValues);
-        
-        $entity->initWorkflow();
-        
-        // create identifier for permission check
-        $instanceId = '';
-        foreach ($idFields as $idField) {
-            if (!empty($instanceId)) {
-                $instanceId .= '_';
-            }
-            $instanceId .= $entity[$idField];
-        }
-        
-        $this->throwForbiddenUnless(SecurityUtil::checkPermission($this->name . ':' . ucwords($objectType) . ':', $instanceId . '::', ACCESS_READ), LogUtil::getErrorMsgPermission());
-        
-        return new Zikula_Response_Ajax(array('result' => true, $objectType => $entity->toArray()));
     }
     
     

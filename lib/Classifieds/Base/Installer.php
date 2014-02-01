@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -45,10 +45,19 @@ class Classifieds_Base_Installer extends Zikula_AbstractInstaller
         }
     
         // set up all our vars with initial values
-        $this->setVar('defaultperiod', 60);
-        $this->setVar('picmaxfilesize', 204800);
-        $this->setVar('allowedextension', 'gif, jpeg, jpg, png');
-        $this->setVar('terms_link', 'index.php');
+        $this->setVar('defaultPeriod', 60);
+        $this->setVar('termsLink', 'index.php');
+        $this->setVar('pictureFileSize', 204800);
+        $this->setVar('allowedExtension', 'gif, jpeg, jpg, png');
+        $this->setVar('pictureHeight', 200);
+        $this->setVar('pictureWidth', 200);
+        $this->setVar('thumbPictureHeight', 64);
+        $this->setVar('thumbPictureWidth', 64);
+        $this->setVar('pictureDummy', '');
+        $this->setVar('useWatermark', false);
+        $this->setVar('typWatermark',  'text' );
+        $this->setVar('watermarkPicture', '/images/watermark.jpg');
+        $this->setVar('textWatermark', '');
     
         $categoryRegistryIdsPerEntity = array();
     
@@ -277,7 +286,6 @@ class Classifieds_Base_Installer extends Zikula_AbstractInstaller
         EventUtil::registerPersistentModuleHandler('Classifieds', 'group.removeuser', array('Classifieds_Listener_Group', 'removeUser'));
     
         // special purposes and 3rd party api support -> Classifieds_Listener_ThirdParty
-        EventUtil::registerPersistentModuleHandler('Classifieds', 'get.pending_content', array('Classifieds_Listener_ThirdParty', 'pendingContentListener'));
         EventUtil::registerPersistentModuleHandler('Classifieds', 'module.content.gettypes', array('Classifieds_Listener_ThirdParty', 'contentGetTypes'));
     }
 }

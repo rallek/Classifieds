@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -16,15 +16,6 @@
  */
 class Classifieds_Listener_ThirdParty extends Classifieds_Listener_Base_ThirdParty
 {
-    /**
-     * Listener for pending content items.
-     *
-     * @param Zikula_Event $event The event instance.
-     */
-    public static function pendingContentListener(Zikula_Event $event)
-    {
-        parent::pendingContentListener($event);
-    }
     
     /**
      * Listener for the `module.content.gettypes` event.

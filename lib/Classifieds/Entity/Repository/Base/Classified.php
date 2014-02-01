@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -27,7 +27,7 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
     /**
      * @var string The default sorting field/expression.
      */
-    protected $defaultSortingField = 'fon';
+    protected $defaultSortingField = 'title';
 
     /**
      * @var array Additional arguments given by the calling controller.
@@ -51,8 +51,9 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
             'email',
             'fon',
             'picture',
-            'startdate',
-            'enddate',
+            'picture2',
+            'classifiedStart',
+            'classifiedEnd',
             'terms',
             'createdUserId',
             'updatedUserId',
@@ -113,7 +114,7 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
      */
     public function getTitleFieldName()
     {
-        $fieldName = 'fon';
+        $fieldName = 'title';
 
         return $fieldName;
     }
@@ -150,7 +151,7 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
      */
     public function getStartDateFieldName()
     {
-        $fieldName = 'startdate';
+        $fieldName = 'classifiedStart';
 
         return $fieldName;
     }
@@ -192,6 +193,7 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
     
             $objectType = 'classified';
             $templateParameters[$objectType . 'ThumbPresetPicture'] = $imageHelper->getPreset($objectType, 'picture', $context, $args);
+            $templateParameters[$objectType . 'ThumbPresetPicture2'] = $imageHelper->getPreset($objectType, 'picture2', $context, $args);
             if (in_array($args['action'], array('display', 'view'))) {
                 // use separate preset for images in related items
                 $templateParameters['relationThumbPreset'] = $imageHelper->getCustomPreset('', '', 'Classifieds_relateditem', $context, $args);
@@ -537,7 +539,7 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
                 }
             } else {
                 // field filter
-                if ($v != '' || (is_numeric($v) && $v > 0)) {
+                if ((!is_numeric($v) && $v != '') || (is_numeric($v) && $v > 0)) {
                     if ($k == 'workflowState' && substr($v, 0, 1) == '!') {
                         $qb->andWhere('tbl.' . $k . ' != :' . $k)
                            ->setParameter($k, substr($v, 1, strlen($v)-1));
@@ -584,11 +586,11 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
             $qb->andWhere('tbl.workflowState IN (:onlineStates)')
                ->setParameter('onlineStates', $onlineStates);
         }
-        $startDate = FormUtil::getPassedValue('startdate', date('Y-m-d H:i:s'), 'GET');
-        $qb->andWhere('(tbl.startdate <= :startDate OR tbl.startdate IS NULL)')
+        $startDate = FormUtil::getPassedValue('classifiedStart', date('Y-m-d H:i:s'), 'GET');
+        $qb->andWhere('(tbl.classifiedStart <= :startDate OR tbl.classifiedStart IS NULL)')
            ->setParameter('startDate', $startDate);
-        $endDate = FormUtil::getPassedValue('enddate', date('Y-m-d H:i:s'), 'GET');
-        $qb->andWhere('tbl.enddate >= :endDate')
+        $endDate = FormUtil::getPassedValue('classifiedEnd', date('Y-m-d H:i:s'), 'GET');
+        $qb->andWhere('tbl.classifiedEnd >= :endDate')
            ->setParameter('endDate', $endDate);
     
         return $qb;
@@ -657,9 +659,11 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.picture = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
-            $where .= 'tbl.startdate = \'' . $fragment . '\'';
+            $where .= 'tbl.picture2 = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
-            $where .= 'tbl.enddate = \'' . $fragment . '\'';
+            $where .= 'tbl.classifiedStart = \'' . $fragment . '\'';
+            $where .= ((!empty($where)) ? ' OR ' : '');
+            $where .= 'tbl.classifiedEnd = \'' . $fragment . '\'';
         } else {
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.workflowState = \'' . $fragment . '\'';
@@ -678,9 +682,11 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
             $where .= ((!empty($where)) ? ' OR ' : '');
             $where .= 'tbl.picture = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
-            $where .= 'tbl.startdate = \'' . $fragment . '\'';
+            $where .= 'tbl.picture2 = \'' . $fragment . '\'';
             $where .= ((!empty($where)) ? ' OR ' : '');
-            $where .= 'tbl.enddate = \'' . $fragment . '\'';
+            $where .= 'tbl.classifiedStart = \'' . $fragment . '\'';
+            $where .= ((!empty($where)) ? ' OR ' : '');
+            $where .= 'tbl.classifiedEnd = \'' . $fragment . '\'';
         }
         $where = '(' . $where . ')';
     
@@ -809,6 +815,11 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
             // but for the slim version we select only the basic fields, and no joins
     
             $selection = 'tbl.id';
+            
+            
+            $selection .= ', tbl.kind';
+            
+            
             $selection .= ', tbl.title';
             $useJoins = false;
         }
@@ -935,7 +946,7 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
      */
     public function archiveObjects()
     {
-        if (!SecurityUtil::checkPermission('Classifieds', '.*', ACCESS_EDIT)) {
+        if (PageUtil::getVar('ClassifiedsAutomaticArchiving', false) !== true && !SecurityUtil::checkPermission('Classifieds', '.*', ACCESS_EDIT)) {
             // current user has no permission for executing the archive workflow action
             return true;
         }
@@ -949,7 +960,7 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
         $qb->andWhere('tbl.workflowState = :approvedState')
            ->setParameter('approvedState', 'approved');
     
-        $qb->andWhere('tbl.enddate < :today')
+        $qb->andWhere('tbl.classifiedEnd < :today')
            ->setParameter('today', $today);
     
         $query = $this->getQueryFromBuilder($qb);
@@ -980,7 +991,8 @@ class Classifieds_Entity_Repository_Base_Classified extends EntityRepository
                 // execute the workflow action
                 $success = $workflowHelper->executeAction($entity, $action);
             } catch(\Exception $e) {
-                LogUtil::registerError($this->__f('Sorry, but an unknown error occured during the %s action. Please apply the changes again!', array($action)));
+            	$dom = ZLanguage::getModuleDomain($this->name);
+                LogUtil::registerError(__f('Sorry, but an unknown error occured during the %s action. Please apply the changes again!', array($action), $dom));
             }
     
             if (!$success) {

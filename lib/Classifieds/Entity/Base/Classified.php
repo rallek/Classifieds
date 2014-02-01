@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -128,17 +128,44 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
      */
     protected $pictureFullPathUrl = '';
     /**
+     * Picture2 meta data array.
+     *
+     * @ORM\Column(type="array")
+     * @var array $picture2Meta.
+     */
+    protected $picture2Meta = array();
+    
+    /**
+     * @ORM\Column(length=255)
+     * @var string $picture2.
+     */
+    protected $picture2 = '';
+    
+    /**
+     * The full path to the picture2.
+     *
+     * @var string $picture2FullPath.
+     */
+    protected $picture2FullPath = '';
+    
+    /**
+     * Full picture2 path as url.
+     *
+     * @var string $picture2FullPathUrl.
+     */
+    protected $picture2FullPathUrl = '';
+    /**
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
-     * @var DateTime $startdate.
+     * @var DateTime $classifiedStart.
      */
-    protected $startdate = null;
+    protected $classifiedStart = null;
     
     /**
      * @ORM\Column(type="datetime")
-     * @var DateTime $enddate.
+     * @var DateTime $classifiedEnd.
      */
-    protected $enddate = null;
+    protected $classifiedEnd = null;
     
     /**
      * @ORM\Column(type="boolean")
@@ -194,7 +221,7 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
      */
     public function __construct()
     {
-        $this->enddate = \DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
+        $this->classifiedEnd = \DateTime::createFromFormat('Y-m-d H:i:s', date('Y-m-d H:i:s'));
         
         $serviceManager = ServiceUtil::getManager();
         $listHelper = new Classifieds_Util_ListEntries($serviceManager);
@@ -614,57 +641,153 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
     }
     
     /**
-     * Get startdate.
+     * Get picture2.
      *
-     * @return DateTime
+     * @return string
      */
-    public function getStartdate()
+    public function getPicture2()
     {
-        return $this->startdate;
+        return $this->picture2;
     }
     
     /**
-     * Set startdate.
+     * Set picture2.
      *
-     * @param DateTime $startdate.
+     * @param string $picture2.
      *
      * @return void
      */
-    public function setStartdate($startdate)
+    public function setPicture2($picture2)
     {
-        if ($startdate != $this->startdate) {
-            if (is_object($startdate) && $startdate instanceOf \DateTime) {
-                $this->startdate = $startdate;
+        if ($picture2 != $this->picture2) {
+            $this->picture2 = $picture2;
+        }
+    }
+    
+    /**
+     * Get picture2 full path.
+     *
+     * @return string
+     */
+    public function getPicture2FullPath()
+    {
+        return $this->picture2FullPath;
+    }
+    
+    /**
+     * Set picture2 full path.
+     *
+     * @param string $picture2FullPath.
+     *
+     * @return void
+     */
+    public function setPicture2FullPath($picture2FullPath)
+    {
+        if ($picture2FullPath != $this->picture2FullPath) {
+            $this->picture2FullPath = $picture2FullPath;
+        }
+    }
+    
+    /**
+     * Get picture2 full path url.
+     *
+     * @return string
+     */
+    public function getPicture2FullPathUrl()
+    {
+        return $this->picture2FullPathUrl;
+    }
+    
+    /**
+     * Set picture2 full path url.
+     *
+     * @param string $picture2FullPathUrl.
+     *
+     * @return void
+     */
+    public function setPicture2FullPathUrl($picture2FullPathUrl)
+    {
+        if ($picture2FullPathUrl != $this->picture2FullPathUrl) {
+            $this->picture2FullPathUrl = $picture2FullPathUrl;
+        }
+    }
+    
+    /**
+     * Get picture2 meta.
+     *
+     * @return array
+     */
+    public function getPicture2Meta()
+    {
+        return $this->picture2Meta;
+    }
+    
+    /**
+     * Set picture2 meta.
+     *
+     * @param array $picture2Meta.
+     *
+     * @return void
+     */
+    public function setPicture2Meta($picture2Meta = Array())
+    {
+        if ($picture2Meta != $this->picture2Meta) {
+            $this->picture2Meta = $picture2Meta;
+        }
+    }
+    
+    /**
+     * Get classified start.
+     *
+     * @return DateTime
+     */
+    public function getClassifiedStart()
+    {
+        return $this->classifiedStart;
+    }
+    
+    /**
+     * Set classified start.
+     *
+     * @param DateTime $classifiedStart.
+     *
+     * @return void
+     */
+    public function setClassifiedStart($classifiedStart)
+    {
+        if ($classifiedStart != $this->classifiedStart) {
+            if (is_object($classifiedStart) && $classifiedStart instanceOf \DateTime) {
+                $this->classifiedStart = $classifiedStart;
             } else {
-                $this->startdate = new \DateTime($startdate);
+                $this->classifiedStart = new \DateTime($classifiedStart);
             }
         }
     }
     
     /**
-     * Get enddate.
+     * Get classified end.
      *
      * @return DateTime
      */
-    public function getEnddate()
+    public function getClassifiedEnd()
     {
-        return $this->enddate;
+        return $this->classifiedEnd;
     }
     
     /**
-     * Set enddate.
+     * Set classified end.
      *
-     * @param DateTime $enddate.
+     * @param DateTime $classifiedEnd.
      *
      * @return void
      */
-    public function setEnddate($enddate)
+    public function setClassifiedEnd($classifiedEnd)
     {
-        if ($enddate != $this->enddate) {
-            if (is_object($enddate) && $enddate instanceOf \DateTime) {
-                $this->enddate = $enddate;
+        if ($classifiedEnd != $this->classifiedEnd) {
+            if (is_object($classifiedEnd) && $classifiedEnd instanceOf \DateTime) {
+                $this->classifiedEnd = $classifiedEnd;
             } else {
-                $this->enddate = new \DateTime($enddate);
+                $this->classifiedEnd = new \DateTime($classifiedEnd);
             }
         }
     }
@@ -822,8 +945,10 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
     
     /**
      * Sets/retrieves the workflow details.
+     *
+     * @param boolean $forceLoading load the workflow record.
      */
-    public function initWorkflow()
+    public function initWorkflow($forceLoading = false)
     {
         $currentFunc = FormUtil::getPassedValue('func', 'main', 'GETPOST', FILTER_SANITIZE_STRING);
         $isReuse = FormUtil::getPassedValue('astemplate', '', 'GETPOST', FILTER_SANITIZE_STRING);
@@ -840,7 +965,7 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
             'schemaname' => $schemaName);
         
         // load the real workflow only when required (e. g. when func is edit or delete)
-        if (!in_array($currentFunc, array('main', 'view', 'display')) && empty($isReuse)) {
+        if ((!in_array($currentFunc, array('main', 'view', 'display')) && empty($isReuse)) || $forceLoading) {
             $result = Zikula_Workflow_Util::getWorkflowForObject($this, $this['_objectType'], $idColumn, 'Classifieds');
             if (!$result) {
                 $dom = ZLanguage::getModuleDomain('Classifieds');
@@ -997,7 +1122,7 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
     /**
      * Creates url arguments array for easy creation of display urls.
      *
-     * @return Array The resulting arguments list. 
+     * @return Array The resulting arguments list.
      */
     public function createUrlArgs()
     {
@@ -1033,6 +1158,17 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
     {
         return 'classifieds.ui_hooks.classifieds';
     }
+
+    /**
+     * Returns an array of all related objects that need to be persited after clone.
+     * 
+     * @param array $objects The objects are added to this array. Default: array()
+     * 
+     * @return array of entity objects.
+     */
+    public function getRelatedObjectsToPersist(&$objects = array()) {
+        return array();
+     }
 
     
     /**
@@ -1080,6 +1216,23 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
             /*if (!isset($this['pictureMeta']) || !is_array($this['pictureMeta']) || !count($this['pictureMeta'])) {
                 // assign new meta data
                 $this['pictureMeta'] = $uploadManager->readMetaDataForFile($this['picture'], $fullPath);
+            }*/
+        }
+        if (!empty($this['picture2'])) {
+            try {
+                $basePath = $controllerHelper->getFileBaseFolder('classified', 'picture2');
+            } catch (\Exception $e) {
+                return LogUtil::registerError($e->getMessage());
+            }
+        
+            $fullPath = $basePath .  $this['picture2'];
+            $this['picture2FullPath'] = $fullPath;
+            $this['picture2FullPathURL'] = System::getBaseUrl() . $fullPath;
+        
+            // just some backwards compatibility stuff
+            /*if (!isset($this['picture2Meta']) || !is_array($this['picture2Meta']) || !count($this['picture2Meta'])) {
+                // assign new meta data
+                $this['picture2Meta'] = $uploadManager->readMetaDataForFile($this['picture2'], $fullPath);
             }*/
         }
         $this['terms'] = (bool) $this['terms'];
@@ -1223,7 +1376,7 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
         // initialise the upload handler
         $uploadManager = new Classifieds_UploadHandler();
     
-        $uploadFields = array('picture');
+        $uploadFields = array('picture', 'picture2');
         foreach ($uploadFields as $uploadField) {
             if (empty($this->$uploadField)) {
                 continue;
@@ -1312,7 +1465,13 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
      */
     public function getTitleFromDisplayPattern()
     {
-        $formattedTitle = $this->getTitle();
+        $serviceManager = ServiceUtil::getManager();
+        $listHelper = new Classifieds_Util_ListEntries($serviceManager);
+    
+        $formattedTitle = ''
+                . $listHelper->resolve($this->getKind(), 'classified', 'kind')
+                . ': '
+                . $this->getTitle();
     
         return $formattedTitle;
     }
@@ -1333,7 +1492,7 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
      *
      * See also:
      * (1) http://docs.doctrine-project.org/en/latest/cookbook/implementing-wakeup-or-clone.html
-     * (2) http://www.sunilb.com/php/php5-oops-tutorial-magic-methods-__clone-method
+     * (2) http://www.php.net/manual/en/language.oop5.cloning.php
      * (3) http://stackoverflow.com/questions/185934/how-do-i-create-a-copy-of-an-object-in-php
      * (4) http://www.pantovic.com/article/26/doctrine2-entity-cloning
      */
@@ -1341,28 +1500,20 @@ abstract class Classifieds_Entity_Base_Classified extends Zikula_EntityAccess
     {
         // If the entity has an identity, proceed as normal.
         if ($this->id) {
-            // create new instance
-            
-            $entity = new \Classifieds_Entity_Classified();
             // unset identifiers
-            $entity->setId(null);
-            // copy simple fields
-            $entity->set_objectType($this->get_objectType());
-            $entity->set_actions($this->get_actions());
-            $entity->initValidator();
-            $entity->setTitle($this->getTitle());
-            $entity->setKind($this->getKind());
-            $entity->setDescription($this->getDescription());
-            $entity->setPrice($this->getPrice());
-            $entity->setEmail($this->getEmail());
-            $entity->setFon($this->getFon());
-            $entity->setPicture($this->getPicture());
-            $entity->setStartdate($this->getStartdate());
-            $entity->setEnddate($this->getEnddate());
-            $entity->setTerms($this->getTerms());
+            $this->setId(0);
     
+            // init validator
+            $this->initValidator();
     
-            return $entity;
+            // reset Workflow
+            $this->resetWorkflow();
+    
+            $this->setCreatedDate(null);
+            $this->setCreatedUserId(null);
+            $this->setUpdatedDate(null);
+            $this->setUpdatedUserId(null);
+    
         }
         // otherwise do nothing, do NOT throw an exception!
     }

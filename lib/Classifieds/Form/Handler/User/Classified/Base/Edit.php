@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -36,7 +36,7 @@ class Classifieds_Form_Handler_User_Classified_Base_Edit extends Classifieds_For
         $this->hasPageLockSupport = true;
         $this->hasCategories = true;
         // array with upload fields and mandatory flags
-        $this->uploadFields = array('picture' => false);
+        $this->uploadFields = array('picture' => false, 'picture2' => false);
         // array with list fields and multiple flags
         $this->listFields = array('workflowState' => false, 'kind' => false);
     }
@@ -82,6 +82,11 @@ class Classifieds_Form_Handler_User_Classified_Base_Edit extends Classifieds_For
     
         // assign data to template as array (makes translatable support easier)
         $this->view->assign($this->objectTypeLower, $entityData);
+    
+        if ($this->mode == 'edit') {
+            // assign formatted title
+            $this->view->assign('formattedEntityTitle', $entity->getTitleFromDisplayPattern());
+        }
     
         // everything okay, no initialization errors occured
         return true;
@@ -265,13 +270,28 @@ class Classifieds_Form_Handler_User_Classified_Base_Edit extends Classifieds_For
     
         // parse given redirect code and return corresponding url
         switch ($this->returnTo) {
-            case 'ajax':
-                        return ModUtil::url($this->name, 'ajax', 'main');
-            case 'ajaxDisplay':
+            case 'admin':
+                        return ModUtil::url($this->name, 'admin', 'main');
+            case 'adminView':
+                        return ModUtil::url($this->name, 'admin', 'view',
+                                                 array('ot' => $this->objectType));
+            case 'adminDisplay':
                         if ($args['commandName'] != 'delete' && !($this->mode == 'create' && $args['commandName'] == 'cancel')) {
                             $urlArgs = $this->addIdentifiersToUrlArgs();
                             $urlArgs['ot'] = $this->objectType;
-                            return ModUtil::url($this->name, 'ajax', 'display', $urlArgs);
+                            return ModUtil::url($this->name, 'admin', 'display', $urlArgs);
+                        }
+                        return $this->getDefaultReturnUrl($args);
+            case 'user':
+                        return ModUtil::url($this->name, 'user', 'main');
+            case 'userView':
+                        return ModUtil::url($this->name, 'user', 'view',
+                                                 array('ot' => $this->objectType));
+            case 'userDisplay':
+                        if ($args['commandName'] != 'delete' && !($this->mode == 'create' && $args['commandName'] == 'cancel')) {
+                            $urlArgs = $this->addIdentifiersToUrlArgs();
+                            $urlArgs['ot'] = $this->objectType;
+                            return ModUtil::url($this->name, 'user', 'display', $urlArgs);
                         }
                         return $this->getDefaultReturnUrl($args);
                     default:

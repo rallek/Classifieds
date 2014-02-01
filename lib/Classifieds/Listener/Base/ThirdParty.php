@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -16,15 +16,6 @@
  */
 class Classifieds_Listener_Base_ThirdParty
 {
-    /**
-     * Listener for pending content items.
-     *
-     * @param Zikula_Event $event The event instance.
-     */
-    public static function pendingContentListener(Zikula_Event $event)
-    {
-        // nothing required here as no entities use enhanced workflows including approval actions
-    }
     
     /**
      * Listener for the `module.content.gettypes` event.
@@ -40,8 +31,6 @@ class Classifieds_Listener_Base_ThirdParty
         // intended is using the add() method to add a plugin like below
         $types = $event->getSubject();
         
-        // plugin for showing a single item
-        $types->add('Classifieds_ContentType_Item');
         
         // plugin for showing a list of multiple items
         $types->add('Classifieds_ContentType_ItemList');

@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -43,6 +43,11 @@ class Classifieds_Form_Handler_Admin_Base_Config extends Zikula_Form_AbstractHan
 
         // retrieve module vars
         $modVars = $this->getVars();
+        // initialise list entries for the 'typ watermark' setting
+        
+        $modVars['typWatermarkItems'] = array(array('value' => 'text', 'text' => 'Text'),
+        array('value' => 'picture', 'text' => 'Picture')
+        );
 
         // assign all module vars
         $this->view->assign('config', $modVars);

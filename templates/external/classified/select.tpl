@@ -58,8 +58,9 @@
         <option value="email"{if $sort eq 'email'} selected="selected"{/if}>{gt text='Email'}</option>
         <option value="fon"{if $sort eq 'fon'} selected="selected"{/if}>{gt text='Fon'}</option>
         <option value="picture"{if $sort eq 'picture'} selected="selected"{/if}>{gt text='Picture'}</option>
-        <option value="startdate"{if $sort eq 'startdate'} selected="selected"{/if}>{gt text='Startdate'}</option>
-        <option value="enddate"{if $sort eq 'enddate'} selected="selected"{/if}>{gt text='Enddate'}</option>
+        <option value="picture2"{if $sort eq 'picture2'} selected="selected"{/if}>{gt text='Picture2'}</option>
+        <option value="classifiedStart"{if $sort eq 'classifiedStart'} selected="selected"{/if}>{gt text='Classified start'}</option>
+        <option value="classifiedEnd"{if $sort eq 'classifiedEnd'} selected="selected"{/if}>{gt text='Classified end'}</option>
         <option value="terms"{if $sort eq 'terms'} selected="selected"{/if}>{gt text='Terms'}</option>
         <option value="createdDate"{if $sort eq 'createdDate'} selected="selected"{/if}>{gt text='Creation date'}</option>
         <option value="createdUserId"{if $sort eq 'createdUserId'} selected="selected"{/if}>{gt text='Creator'}</option>

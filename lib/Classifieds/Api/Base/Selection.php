@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -43,7 +43,7 @@ class Classifieds_Api_Base_Selection extends Zikula_AbstractApi
      *
      * @param string $objectType The object type to retrieve.
      *
-     * @boolean Whether composite keys are used or not.
+     * @return boolean Whether composite keys are used or not.
      */
     protected function hasCompositeKeys($objectType)
     {
