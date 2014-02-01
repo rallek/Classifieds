@@ -45,10 +45,10 @@ class Classifieds_Base_Installer extends Zikula_AbstractInstaller
         }
     
         // set up all our vars with initial values
+        $this->setVar('pageSize', 20);
         $this->setVar('defaultPeriod', 60);
         $this->setVar('termsLink', 'index.php');
         $this->setVar('pictureFileSize', 204800);
-        $this->setVar('allowedExtension', 'gif, jpeg, jpg, png');
         $this->setVar('pictureHeight', 200);
         $this->setVar('pictureWidth', 200);
         $this->setVar('thumbPictureHeight', 64);

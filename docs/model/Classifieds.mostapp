@@ -98,6 +98,10 @@ application Classifieds {
 			variables {
 				varContainer Variables {
 					vars {
+						intVar pageSize {
+							documentation "default of items per page"
+							value "20"
+						},
 						intVar defaultPeriod {
 							documentation "Standardtage für die Laufzeit der Kleinanzeige"
 							value "60"
@@ -110,9 +114,6 @@ application Classifieds {
 						intVar pictureFileSize {
 							documentation "the maximum filesize of the uploaded pictures (in byte, e.g. 102400 for 100kb)"
 							value "204800"
-						},
-						textVar allowedExtension {
-							value "gif, jpeg, jpg, png"
 						},
 						intVar pictureHeight {
 							documentation "maximal height of the picture"

@@ -11,13 +11,18 @@
     {form cssClass='z-form'}
         {* add validation summary and a <div> element for styling the form *}
         {classifiedsFormFrame}
-            {formsetinitialfocus inputId='defaultPeriod'}
+            {formsetinitialfocus inputId='pageSize'}
             {gt text='Variables' assign='tabTitle'}
             <fieldset>
                 <legend>{$tabTitle}</legend>
             
                 <p class="z-confirmationmsg">{gt text='Here you can manage all basic settings for this application.'}</p>
             
+                <div class="z-formrow">
+                    {gt text='default of items per page' assign='toolTip'}
+                    {formlabel for='pageSize' __text='Page size' cssClass='classifieds-form-tooltips ' title=$toolTip}
+                        {formintinput id='pageSize' group='config' maxLength=255 __title='Enter the page size. Only digits are allowed.'}
+                </div>
                 <div class="z-formrow">
                     {gt text='Standardtage für die Laufzeit der Kleinanzeige' assign='toolTip'}
                     {formlabel for='defaultPeriod' __text='Default period' cssClass='classifieds-form-tooltips ' title=$toolTip}
@@ -32,10 +37,6 @@
                     {gt text='the maximum filesize of the uploaded pictures (in byte, e.g. 102400 for 100kb)' assign='toolTip'}
                     {formlabel for='pictureFileSize' __text='Picture file size' cssClass='classifieds-form-tooltips ' title=$toolTip}
                         {formintinput id='pictureFileSize' group='config' maxLength=255 __title='Enter the picture file size. Only digits are allowed.'}
-                </div>
-                <div class="z-formrow">
-                    {formlabel for='allowedExtension' __text='Allowed extension' cssClass=''}
-                        {formtextinput id='allowedExtension' group='config' maxLength=255 __title='Enter the allowed extension.'}
                 </div>
                 <div class="z-formrow">
                     {gt text='maximal height of the picture' assign='toolTip'}
