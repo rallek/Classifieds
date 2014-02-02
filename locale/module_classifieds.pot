@@ -1,0 +1,1641 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zikula 1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-20 18:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: workflows/function.none_permissioncheck.php:61
+msgid "None workflow (no approval)"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:62
+msgid ""
+"This is like a non-existing workflow. Everything is online immediately after "
+"creation."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:66
+#: lib/Classifieds/Util/Base/Workflow.php:28
+msgid "Initial"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:66
+msgid "Pseudo-state for content which is just created and not persisted yet."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:67
+#: lib/Classifieds/Util/Base/ListEntries.php:164
+#: lib/Classifieds/Util/Base/Workflow.php:31
+msgid "Deferred"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:67
+#: lib/Classifieds/Util/Base/ListEntries.php:165
+msgid ""
+"Content has not been submitted yet or has been waiting, but was rejected."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:68
+#: lib/Classifieds/Util/Base/ListEntries.php:169
+#: lib/Classifieds/Util/Base/Workflow.php:34
+msgid "Approved"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:68
+#: lib/Classifieds/Util/Base/ListEntries.php:170
+msgid "Content has been approved and is available online."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:69
+#: lib/Classifieds/Util/Base/ListEntries.php:174
+#: lib/Classifieds/Util/Base/Workflow.php:37
+msgid "Suspended"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:69
+#: lib/Classifieds/Util/Base/ListEntries.php:175
+msgid "Content has been approved, but is temporarily offline."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:70
+#: lib/Classifieds/Util/Base/ListEntries.php:179
+#: lib/Classifieds/Util/Base/Workflow.php:40
+msgid "Archived"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:70
+#: lib/Classifieds/Util/Base/ListEntries.php:180
+msgid "Content has reached the end and became archived."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:71
+#: lib/Classifieds/Util/Base/Workflow.php:43
+msgid "Deleted"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:71
+msgid "Pseudo-state for content which has been deleted from the database."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:77
+#: workflows/function.none_permissioncheck.php:82
+#: templates/admin/classified/view.tpl:193
+msgid "Submit"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:77
+#: workflows/function.none_permissioncheck.php:82
+msgid "Submit content."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:78
+msgid "Defer"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:78
+msgid "Defer content for later submission."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:83
+#: workflows/function.none_permissioncheck.php:88
+#: workflows/function.none_permissioncheck.php:95
+#: workflows/function.none_permissioncheck.php:102
+msgid "Update"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:83
+#: workflows/function.none_permissioncheck.php:88
+#: workflows/function.none_permissioncheck.php:95
+#: workflows/function.none_permissioncheck.php:102
+msgid "Update content."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:84
+#: workflows/function.none_permissioncheck.php:91
+#: workflows/function.none_permissioncheck.php:98
+#: workflows/function.none_permissioncheck.php:103
+#: lib/Classifieds/Entity/Base/Classified.php:942
+#: lib/Classifieds/Entity/Base/Classified.php:943
+#: templates/admin/classified/view.tpl:191
+#: templates/admin/classified/delete.tpl:7
+#: templates/admin/classified/delete.tpl:20
+msgid "Delete"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:84
+#: workflows/function.none_permissioncheck.php:91
+#: workflows/function.none_permissioncheck.php:98
+#: workflows/function.none_permissioncheck.php:103
+#: templates/admin/classified/view.tpl:191
+msgid "Delete content permanently."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:89
+#: templates/admin/classified/view.tpl:188
+msgid "Unpublish"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:89
+#: templates/admin/classified/view.tpl:188
+msgid "Hide content temporarily."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:90
+#: workflows/function.none_permissioncheck.php:97
+#: templates/admin/classified/view.tpl:190
+msgid "Archive"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:90
+#: workflows/function.none_permissioncheck.php:97
+#: templates/admin/classified/view.tpl:190
+msgid "Move content into the archive."
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:96
+#: templates/admin/classified/view.tpl:189
+msgid "Publish"
+msgstr ""
+
+#: workflows/function.none_permissioncheck.php:96
+#: templates/admin/classified/view.tpl:189
+msgid "Make content available again."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:36
+msgid "This is a required field."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:37
+msgid "Please enter a valid number in this field."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:38
+msgid ""
+"Please use numbers only in this field. please avoid spaces or other "
+"characters such as dots or commas."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:39
+msgid "Please use letters only (a-z) in this field."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:40
+msgid ""
+"Please use only letters (a-z) or numbers (0-9) only in this field. No spaces "
+"or other characters are allowed."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:41
+msgid "Please enter a valid date."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:42
+msgid "Please enter a valid email address. For example yourname@example.com ."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:43
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:44
+msgid ""
+"Please use this date format: dd/mm/yyyy. For example 17/03/2010 for the 17th "
+"of March, 2010."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:45
+msgid "Please enter a valid $ amount. For example $100.00 ."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:46
+msgid "Please make a selection."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:47
+msgid "Please select one of the above options."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:50
+msgid "This value must not contain spaces."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:51
+msgid "Please select an allowed file type."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:52
+#: templates/plugins/function.classifiedsValidationError.php:54
+#: templates/plugins/function.classifiedsValidationError.php:56
+msgid "Please select a value in the past."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:53
+#: templates/plugins/function.classifiedsValidationError.php:55
+#: templates/plugins/function.classifiedsValidationError.php:57
+msgid "Please select a value in the future."
+msgstr ""
+
+#: templates/plugins/function.classifiedsValidationError.php:58
+msgid "This value is already assigned, but must be unique. Please change it."
+msgstr ""
+
+#: templates/plugins/function.classifiedsTemplateHeaders.php:31
+#, php-format
+msgid "%1$s: missing parameter '%2$s'"
+msgstr ""
+
+#: templates/plugins/function.classifiedsObjectTypeSelector.php:30
+#: lib/Classifieds/Base/Version.php:30
+#: lib/Classifieds/NewsletterPlugin/ItemList.php:69
+#: lib/Classifieds/Api/Base/User.php:42 lib/Classifieds/Api/Base/Admin.php:42
+#: templates/user/header.tpl:12 templates/search/options.tpl:5
+#: templates/block/itemlist_modify.tpl:5
+msgid "Classifieds"
+msgstr ""
+
+#: templates/plugins/function.classifiedsTemplateSelector.php:30
+#: templates/block/itemlist_modify.tpl:52
+msgid "Only item titles"
+msgstr ""
+
+#: templates/plugins/function.classifiedsTemplateSelector.php:31
+#: templates/block/itemlist_modify.tpl:53
+msgid "With description"
+msgstr ""
+
+#: templates/plugins/function.classifiedsTemplateSelector.php:32
+#: templates/contenttype/itemlist_edit.tpl:68
+#: templates/block/itemlist_modify.tpl:54
+#: templates/block/itemlist_modify.tpl:59
+msgid "Custom template"
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/Admin/Base/Config.php:112
+msgid "Error! Failed to set configuration variables."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/Admin/Base/Config.php:115
+msgid "Done! Module configuration updated."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:228
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:310
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:342
+#: lib/Classifieds/Controller/Base/User.php:237
+#: lib/Classifieds/Controller/Base/Admin.php:76
+#: lib/Classifieds/Controller/Base/Admin.php:301
+#: lib/Classifieds/Controller/Base/External.php:94
+#: lib/Classifieds/Controller/Base/Ajax.php:64
+#: lib/Classifieds/Controller/Base/Ajax.php:204
+msgid "No such item."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:258
+#: lib/Classifieds/Controller/Base/Admin.php:310
+msgid "Error! Could not determine workflow actions."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:528
+msgid "Done! Item created."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:530
+msgid "Error! Creation attempt failed."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:535
+#: lib/Classifieds/Controller/Base/Admin.php:446
+msgid "Done! Item updated."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:537
+msgid "Error! Update attempt failed."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:542
+#: lib/Classifieds/Controller/Base/Admin.php:336
+#: lib/Classifieds/Controller/Base/Admin.php:444
+msgid "Done! Item deleted."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Base/Edit.php:544
+msgid "Error! Deletion attempt failed."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Classified/Base/Edit.php:60
+msgid ""
+"Sorry, but you can not create the classified yet as other items are required "
+"which must be created before!"
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Classified/Base/Edit.php:187
+msgid "Done! Classified created."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Classified/Base/Edit.php:189
+#: lib/Classifieds/Form/Handler/User/Classified/Base/Edit.php:196
+msgid "Done! Classified updated."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Classified/Base/Edit.php:193
+msgid "Done! Classified deleted."
+msgstr ""
+
+#: lib/Classifieds/Form/Handler/User/Classified/Base/Edit.php:222
+#: lib/Classifieds/Entity/Repository/Base/Classified.php:983
+#: lib/Classifieds/Controller/Base/Admin.php:436
+#, php-format
+msgid ""
+"Sorry, but an unknown error occured during the %s action. Please apply the "
+"changes again!"
+msgstr ""
+
+#: lib/Classifieds/ContentType/Base/Item.php:52
+msgid "Classifieds detail view"
+msgstr ""
+
+#: lib/Classifieds/ContentType/Base/Item.php:64
+msgid "Display or link a single Classifieds object."
+msgstr ""
+
+#: lib/Classifieds/ContentType/Base/Item.php:119
+msgid "No item selected."
+msgstr ""
+
+#: lib/Classifieds/ContentType/Base/ItemList.php:118
+#: lib/Classifieds/Block/Base/ItemList.php:50
+msgid "Classifieds list view"
+msgstr ""
+
+#: lib/Classifieds/ContentType/Base/ItemList.php:130
+#: lib/Classifieds/Block/Base/ItemList.php:51
+msgid "Display list of Classifieds objects."
+msgstr ""
+
+#: lib/Classifieds/ContentType/Base/ItemList.php:409
+#: templates/external/classified/find.tpl:36
+#: templates/external/classified/select.tpl:15
+#: templates/admin/classified/view_quickNav.tpl:13
+#: templates/admin/classified/view_quickNav.tpl:17
+#: templates/user/classified/view_quickNav.tpl:13
+#: templates/user/classified/view_quickNav.tpl:17
+#: templates/block/itemlist_modify.tpl:11
+msgid "All"
+msgstr ""
+
+#: lib/Classifieds/Base/Installer.php:38
+#: lib/Classifieds/Base/Installer.php:136
+msgid "Doctrine Exception: "
+msgstr ""
+
+#: lib/Classifieds/Base/Installer.php:40
+#, php-format
+msgid ""
+"An error was encountered while creating the tables for the %s extension."
+msgstr ""
+
+#: lib/Classifieds/Base/Installer.php:42
+msgid ""
+"Please enable the development mode by editing the /config/config.php file in "
+"order to reveal the error details."
+msgstr ""
+
+#: lib/Classifieds/Base/Installer.php:68
+#, php-format
+msgid "Error! Could not create a category registry for the %s entity."
+msgstr ""
+
+#: lib/Classifieds/Base/Installer.php:129
+#, php-format
+msgid ""
+"An error was encountered while removing stored object workflows for the %s "
+"extension."
+msgstr ""
+
+#: lib/Classifieds/Base/Installer.php:138
+#, php-format
+msgid "An error was encountered while dropping tables for the %s extension."
+msgstr ""
+
+#: lib/Classifieds/Base/Installer.php:162
+#, php-format
+msgid "The upload directories at [%s] can be removed manually."
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:97
+msgid "Error! Could not move your file to the destination folder."
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:125
+msgid "Error! No file found."
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:137
+msgid ""
+"Error! This file type is not allowed. Please choose another file format."
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:147
+#, php-format
+msgid "Error! Your file is too big. Please keep it smaller than %s kilobytes."
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:151
+#, php-format
+msgid "Error! Your file is too big. Please keep it smaller than %s megabytes."
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:160
+msgid "Error! This file type seems not to be a valid image."
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:321
+#: lib/Classifieds/Base/UploadHandler.php:339
+msgid "Unknown error"
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:324
+#: lib/Classifieds/Base/UploadHandler.php:327
+msgid "File too big"
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:330
+msgid "File uploaded partially"
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:333
+msgid "No file uploaded"
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:336
+msgid "No tmp folder"
+msgstr ""
+
+#: lib/Classifieds/Base/UploadHandler.php:343
+msgid "Error with upload: "
+msgstr ""
+
+#: lib/Classifieds/Base/Version.php:32
+msgid "With classifieds you can manage your own market."
+msgstr ""
+
+#. ! url version of name, should be in lowercase without space
+#: lib/Classifieds/Base/Version.php:34
+msgid "classifieds"
+msgstr ""
+
+#: lib/Classifieds/Base/Version.php:69
+msgid "classifieds Classifieds Display Hooks"
+msgstr ""
+
+#: lib/Classifieds/Base/Version.php:87
+msgid "classifieds Classifieds Filter Hooks"
+msgstr ""
+
+#: lib/Classifieds/Block/Base/ItemList.php:46
+msgid ""
+"Notice: This block will not be displayed until you activate the Classifieds "
+"module."
+msgstr ""
+
+#: lib/Classifieds/Block/Base/ItemList.php:185
+msgid "Classifieds items"
+msgstr ""
+
+#: lib/Classifieds/NewsletterPlugin/ItemList.php:26
+#: templates/admin/classified/view.atom.tpl:4
+#: templates/admin/classified/view.rss.tpl:11
+#: templates/user/classified/view.atom.tpl:4
+#: templates/user/classified/view.rss.tpl:11
+msgid "Latest classifieds"
+msgstr ""
+
+#: lib/Classifieds/NewsletterPlugin/ItemList.php:36
+msgid "List of classifieds"
+msgstr ""
+
+#: lib/Classifieds/NewsletterPlugin/ItemList.php:46
+msgid "This plugin shows a list of classifieds of the Classifieds module."
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:184
+msgid "All except deferred"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:185
+msgid "Shows all items except these which are deferred"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:189
+msgid "All except approved"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:190
+msgid "Shows all items except these which are approved"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:194
+msgid "All except suspended"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:195
+msgid "Shows all items except these which are suspended"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:199
+msgid "All except archived"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:200
+msgid "Shows all items except these which are archived"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:216
+msgid "Offer"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/ListEntries.php:221
+#: templates/admin/classified/view_quickNav.tpl:57
+#: templates/user/classified/view_quickNav.tpl:58
+msgid "Search"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/View.php:215
+msgid "Bytes"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/View.php:218
+msgid "KB"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/View.php:222
+msgid "MB"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/View.php:226
+msgid "GB"
+msgstr ""
+
+#: lib/Classifieds/Util/Base/Controller.php:214
+#, php-format
+msgid ""
+"The upload directory \"%s\" does not exist and could not be created. Try to "
+"create it yourself and make sure that this folder is accessible via the web "
+"and writable by the webserver."
+msgstr ""
+
+#: lib/Classifieds/Util/Base/Controller.php:220
+#, php-format
+msgid ""
+"Warning! The upload directory at \"%s\" exists but is not writable by the "
+"webserver."
+msgstr ""
+
+#: lib/Classifieds/Util/Base/Controller.php:231
+#, php-format
+msgid "Warning! Could not write the .htaccess file at \"%s\"."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:31
+#, php-format
+msgid "Error! Field value may only contain digits (%s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:35
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:43
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:55
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:67
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:71
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:79
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:83
+#, php-format
+msgid "Error! Length of field value must not be higher than %2$s (%1$s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:39
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:47
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:51
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:59
+#, php-format
+msgid "Error! Field value must not be empty (%s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:63
+#, php-format
+msgid "Error! Field value must be numeric (%s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:75
+#, php-format
+msgid "Error! Field value must be a valid email address (%s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:87
+#, php-format
+msgid "Error! Field value must be a valid datetime (%s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:91
+#, php-format
+msgid "Error! Field value must be a date in the future (%s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:95
+#, php-format
+msgid "Error! Field value must be a valid boolean (%s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Validator/Base/Classified.php:99
+#, php-format
+msgid "Error! The start date (%1$s) must be before the end date (%2$s)."
+msgstr ""
+
+#: lib/Classifieds/Entity/Repository/Base/Classified.php:184
+#: templates/admin/classified/display.tpl:54
+#: templates/admin/classified/display.tpl:57
+#: templates/admin/classified/view.tpl:145
+#: templates/admin/classified/view.tpl:148
+#: templates/user/classified/view.tpl:137
+#: templates/user/classified/view.tpl:140
+msgid "No"
+msgstr ""
+
+#: lib/Classifieds/Entity/Repository/Base/Classified.php:185
+#: templates/admin/classified/display.tpl:53
+#: templates/admin/classified/display.tpl:56
+#: templates/admin/classified/view.tpl:144
+#: templates/admin/classified/view.tpl:147
+#: templates/user/classified/view.tpl:136
+#: templates/user/classified/view.tpl:139
+msgid "Yes"
+msgstr ""
+
+#: lib/Classifieds/Entity/Repository/Base/Classified.php:267
+#: lib/Classifieds/Entity/Repository/Base/Classified.php:292
+#: lib/Classifieds/Entity/Repository/Base/Classified.php:319
+#: lib/Classifieds/Entity/Repository/Base/Classified.php:346
+msgid "Invalid user identifier received."
+msgstr ""
+
+#: lib/Classifieds/Entity/Repository/Base/Classified.php:395
+#: lib/Classifieds/Api/Base/Selection.php:68
+msgid "Invalid identifier received."
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:847
+msgid "Error! Could not load the associated workflow."
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:925
+msgid "Open preview page"
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:926
+msgid "Preview"
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:932
+#: lib/Classifieds/Entity/Base/Classified.php:962
+#: templates/admin/classified/display.tpl:8
+msgid "Details"
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:951
+#: lib/Classifieds/Entity/Base/Classified.php:952
+#: lib/Classifieds/Entity/Base/Classified.php:990
+#: lib/Classifieds/Entity/Base/Classified.php:991
+msgid "Back to overview"
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:974
+#: lib/Classifieds/Entity/Base/Classified.php:975
+msgid "Edit"
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:980
+msgid "Reuse for new item"
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:981
+msgid "Reuse"
+msgstr ""
+
+#: lib/Classifieds/Entity/Base/Classified.php:1193
+msgid "Error! Could not remove stored workflow. Deletion has been aborted."
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Selection.php:164
+msgid "Invalid object type received."
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Search.php:148
+msgid "Error! Could not save the search results."
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Mailz.php:32
+msgid "3 newest classifieds"
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Mailz.php:33
+msgid "A list of the three newest classifieds."
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Mailz.php:38
+msgid "3 random classifieds"
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Mailz.php:39
+msgid "A list of three random classifieds."
+msgstr ""
+
+#: lib/Classifieds/Api/Base/User.php:30
+msgid "Backend"
+msgstr ""
+
+#: lib/Classifieds/Api/Base/User.php:31
+msgid "Switch to administration area."
+msgstr ""
+
+#: lib/Classifieds/Api/Base/User.php:43 lib/Classifieds/Api/Base/Admin.php:43
+#: templates/admin/classified/view.tpl:4 templates/user/classified/view.tpl:4
+msgid "Classified list"
+msgstr ""
+
+#: lib/Classifieds/Api/Base/User.php:60 lib/Classifieds/Api/Base/User.php:202
+msgid "Invalid arguments array received."
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Admin.php:30
+msgid "Frontend"
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Admin.php:31
+msgid "Switch to user area."
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Admin.php:47
+msgid "Configuration"
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Admin.php:48
+msgid "Manage settings for this application"
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Account.php:52
+msgid "My classifieds"
+msgstr ""
+
+#: lib/Classifieds/Api/Base/Account.php:61
+msgid "Classifieds Backend"
+msgstr ""
+
+#: lib/Classifieds/Controller/Base/User.php:234
+#: lib/Classifieds/Controller/Base/Admin.php:73
+#: lib/Classifieds/Controller/Base/Admin.php:298
+#: lib/Classifieds/Controller/Base/External.php:87
+#: lib/Classifieds/Controller/Base/Ajax.php:61
+msgid "Error! Invalid identifier received."
+msgstr ""
+
+#: lib/Classifieds/Controller/Base/Admin.php:320
+msgid "Error! It is not allowed to delete this entity."
+msgstr ""
+
+#: lib/Classifieds/Controller/Base/External.php:166
+msgid "Error: Invalid editor context given for external controller action."
+msgstr ""
+
+#: lib/Classifieds/Controller/Base/Ajax.php:198
+msgid "Error: invalid input."
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:14
+#: templates/contenttype/itemlist_edit.tpl:39
+#: templates/block/itemlist_modify.tpl:36
+msgid "Sorting"
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:16
+#: templates/contenttype/itemlist_edit.tpl:43
+#: templates/block/itemlist_modify.tpl:38
+msgid "Random"
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:17
+#: templates/contenttype/itemlist_edit.tpl:46
+#: templates/block/itemlist_modify.tpl:39
+msgid "Newest"
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:18
+#: templates/contenttype/itemlist_edit.tpl:49
+#: templates/block/itemlist_modify.tpl:40
+msgid "Default"
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:22
+#: templates/contenttype/itemlist_edit.tpl:55
+#: templates/block/itemlist_modify.tpl:45
+msgid "Amount"
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:27
+#: templates/contenttype/itemlist_edit.tpl:75
+#: templates/block/itemlist_modify.tpl:65
+msgid "Filter (expert option)"
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:30
+#: templates/contenttype/itemlist_edit.tpl:79
+#: templates/block/itemlist_modify.tpl:68
+msgid "Syntax examples"
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:30
+#: templates/contenttype/itemlist_edit.tpl:79
+#: templates/block/itemlist_modify.tpl:68
+msgid "or"
+msgstr ""
+
+#: templates/plugin_config/ItemList.tpl:36
+msgid "No object types found."
+msgstr ""
+
+#: templates/external/classified/display.tpl:26
+#: templates/external/classified/info.tpl:9
+#: templates/admin/classified/display.tpl:40
+#: templates/admin/classified/view.tpl:129
+#: templates/admin/classified/edit.tpl:84
+#: templates/user/classified/display.tpl:20
+#: templates/user/classified/view.tpl:101
+#: templates/user/classified/edit.tpl:78
+msgid "Download"
+msgstr ""
+
+#: templates/external/classified/find.tpl:5
+#: templates/external/classified/find.tpl:33
+msgid "Search and select classified"
+msgstr ""
+
+#: templates/external/classified/find.tpl:41
+#: templates/external/classified/select.tpl:20
+#: templates/admin/classified/view_quickNav.tpl:21
+#: templates/contenttype/itemlist_edit.tpl:23
+#: templates/user/include_categories_edit.tpl:11
+#: templates/user/classified/view_quickNav.tpl:21
+#: templates/block/itemlist_modify.tpl:16
+msgid "Category"
+msgstr ""
+
+#: templates/external/classified/find.tpl:46
+#: templates/external/classified/select.tpl:25
+#: templates/admin/classified/view_quickNav.tpl:26
+#: templates/admin/classified/view.rss.tpl:41
+#: templates/admin/include_categories_display.tpl:4
+#: templates/admin/include_categories_display.tpl:7
+#: templates/contenttype/itemlist_edit.tpl:26
+#: templates/user/include_categories_edit.tpl:3
+#: templates/user/include_categories_edit.tpl:8
+#: templates/user/include_categories_edit.tpl:14
+#: templates/user/classified/view_quickNav.tpl:26
+#: templates/user/classified/view.rss.tpl:41
+#: templates/user/include_categories_display.tpl:4
+#: templates/user/include_categories_display.tpl:7
+#: templates/ajax/include_categories_display.tpl:4
+#: templates/ajax/include_categories_display.tpl:7
+#: templates/block/itemlist_modify.tpl:21
+msgid "Categories"
+msgstr ""
+
+#: templates/external/classified/find.tpl:54
+#: templates/contenttype/itemlist_edit.tpl:31
+#: templates/block/itemlist_modify.tpl:29
+msgid "This is an optional filter."
+msgstr ""
+
+#: templates/external/classified/find.tpl:61
+msgid "Paste as"
+msgstr ""
+
+#: templates/external/classified/find.tpl:63
+msgid "Link to the classified"
+msgstr ""
+
+#: templates/external/classified/find.tpl:64
+msgid "ID of classified"
+msgstr ""
+
+#: templates/external/classified/find.tpl:70
+#: templates/external/classified/select.tpl:39
+#: templates/admin/classified/display.tpl:4
+#: templates/user/classified/display.tpl:4
+msgid "Classified"
+msgstr ""
+
+#: templates/external/classified/find.tpl:82
+#: templates/external/classified/select.tpl:44
+#: templates/contenttype/itemlist_classified_display_description.tpl:11
+msgid "No entries found."
+msgstr ""
+
+#: templates/external/classified/find.tpl:89
+#: templates/external/classified/select.tpl:50
+#: templates/admin/classified/view_quickNav.tpl:61
+#: templates/user/classified/view_quickNav.tpl:62
+msgid "Sort by"
+msgstr ""
+
+#: templates/external/classified/find.tpl:91
+#: templates/external/classified/select.tpl:52
+#: templates/admin/classified/view_quickNav.tpl:64
+#: templates/user/classified/view_quickNav.tpl:65
+msgid "Id"
+msgstr ""
+
+#: templates/external/classified/find.tpl:92
+#: templates/external/classified/select.tpl:53
+#: templates/admin/classified/view_quickNav.tpl:39
+#: templates/admin/classified/view_quickNav.tpl:65
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/view_quickNav.tpl:40
+#: templates/user/classified/view_quickNav.tpl:66
+#: templates/user/classified/view.csv.tpl:3
+msgid "Workflow state"
+msgstr ""
+
+#: templates/external/classified/find.tpl:93
+#: templates/external/classified/select.tpl:54
+#: templates/admin/classified/display.tpl:15
+#: templates/admin/classified/view_quickNav.tpl:66
+#: templates/admin/classified/view.tpl:61
+#: templates/admin/classified/edit.tpl:31
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/view_quickNav.tpl:67
+#: templates/user/classified/view.tpl:59 templates/user/classified/edit.tpl:25
+#: templates/user/classified/view.csv.tpl:3
+msgid "Title"
+msgstr ""
+
+#: templates/external/classified/find.tpl:94
+#: templates/external/classified/select.tpl:55
+#: templates/admin/classified/display.tpl:17
+#: templates/admin/classified/view_quickNav.tpl:48
+#: templates/admin/classified/view_quickNav.tpl:67
+#: templates/admin/classified/view.tpl:64
+#: templates/admin/classified/edit.tpl:37
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/display.tpl:28
+#: templates/user/classified/view_quickNav.tpl:49
+#: templates/user/classified/view_quickNav.tpl:68
+#: templates/user/classified/view.tpl:62 templates/user/classified/edit.tpl:31
+#: templates/user/classified/view.csv.tpl:3
+msgid "Kind"
+msgstr ""
+
+#: templates/external/classified/find.tpl:95
+#: templates/external/classified/select.tpl:56
+#: templates/admin/classified/display.tpl:19
+#: templates/admin/classified/view_quickNav.tpl:68
+#: templates/admin/classified/view.tpl:67
+#: templates/admin/classified/edit.tpl:43
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/display.tpl:45
+#: templates/user/classified/view_quickNav.tpl:69
+#: templates/user/classified/view.tpl:65 templates/user/classified/edit.tpl:37
+#: templates/user/classified/view.csv.tpl:3
+msgid "Description"
+msgstr ""
+
+#: templates/external/classified/find.tpl:96
+#: templates/external/classified/select.tpl:57
+#: templates/admin/classified/display.tpl:21
+#: templates/admin/classified/view_quickNav.tpl:69
+#: templates/admin/classified/view.tpl:70
+#: templates/admin/classified/edit.tpl:50
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/display.tpl:8
+#: templates/user/classified/view_quickNav.tpl:70
+#: templates/user/classified/view.tpl:68 templates/user/classified/edit.tpl:44
+#: templates/user/classified/view.csv.tpl:3
+msgid "Price"
+msgstr ""
+
+#: templates/external/classified/find.tpl:97
+#: templates/external/classified/select.tpl:58
+#: templates/admin/classified/display.tpl:23
+#: templates/admin/classified/display.tpl:26
+#: templates/admin/classified/view_quickNav.tpl:70
+#: templates/admin/classified/view.tpl:73
+#: templates/admin/classified/view.tpl:117
+#: templates/admin/classified/edit.tpl:57
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/display.tpl:31
+#: templates/user/classified/display.tpl:34
+#: templates/user/classified/view_quickNav.tpl:71
+#: templates/user/classified/view.tpl:71
+#: templates/user/classified/view.tpl:120
+#: templates/user/classified/edit.tpl:51
+#: templates/user/classified/view.csv.tpl:3
+msgid "Email"
+msgstr ""
+
+#: templates/external/classified/find.tpl:98
+#: templates/external/classified/select.tpl:59
+#: templates/admin/classified/display.tpl:32
+#: templates/admin/classified/view_quickNav.tpl:71
+#: templates/admin/classified/view.tpl:76
+#: templates/admin/classified/edit.tpl:64
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/display.tpl:40
+#: templates/user/classified/view_quickNav.tpl:72
+#: templates/user/classified/view.tpl:74 templates/user/classified/edit.tpl:58
+#: templates/user/classified/view.csv.tpl:3
+msgid "Fon"
+msgstr ""
+
+#: templates/external/classified/find.tpl:99
+#: templates/external/classified/select.tpl:60
+#: templates/admin/classified/display.tpl:34
+#: templates/admin/classified/view_quickNav.tpl:72
+#: templates/admin/classified/view.tpl:79
+#: templates/admin/classified/edit.tpl:70
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/view_quickNav.tpl:73
+#: templates/user/classified/view.tpl:56 templates/user/classified/edit.tpl:64
+#: templates/user/classified/view.csv.tpl:3
+msgid "Picture"
+msgstr ""
+
+#: templates/external/classified/find.tpl:100
+#: templates/external/classified/select.tpl:61
+#: templates/admin/classified/display.tpl:45
+#: templates/admin/classified/view_quickNav.tpl:73
+#: templates/admin/classified/view.tpl:82
+#: templates/admin/classified/edit.tpl:99
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/display.tpl:50
+#: templates/user/classified/view_quickNav.tpl:74
+#: templates/user/classified/view.tpl:77 templates/user/classified/edit.tpl:93
+#: templates/user/classified/view.csv.tpl:3
+msgid "Startdate"
+msgstr ""
+
+#: templates/external/classified/find.tpl:101
+#: templates/external/classified/select.tpl:62
+#: templates/admin/classified/display.tpl:47
+#: templates/admin/classified/view_quickNav.tpl:74
+#: templates/admin/classified/view.tpl:85
+#: templates/admin/classified/edit.tpl:111
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/display.tpl:52
+#: templates/user/classified/view_quickNav.tpl:75
+#: templates/user/classified/view.tpl:80
+#: templates/user/classified/edit.tpl:105
+#: templates/user/classified/view.csv.tpl:3
+msgid "Enddate"
+msgstr ""
+
+#: templates/external/classified/find.tpl:102
+#: templates/external/classified/select.tpl:63
+#: templates/admin/classified/display.tpl:49
+#: templates/admin/classified/view_quickNav.tpl:75
+#: templates/admin/classified/view_quickNav.tpl:101
+#: templates/admin/classified/view.tpl:88
+#: templates/admin/classified/edit.tpl:126
+#: templates/admin/classified/view.csv.tpl:3
+#: templates/user/classified/view_quickNav.tpl:76
+#: templates/user/classified/view_quickNav.tpl:102
+#: templates/user/classified/view.tpl:83
+#: templates/user/classified/edit.tpl:120
+#: templates/user/classified/view.csv.tpl:3
+msgid "Terms"
+msgstr ""
+
+#: templates/external/classified/find.tpl:103
+#: templates/external/classified/select.tpl:64
+#: templates/admin/classified/view_quickNav.tpl:76
+#: templates/user/classified/view_quickNav.tpl:77
+msgid "Creation date"
+msgstr ""
+
+#: templates/external/classified/find.tpl:104
+#: templates/external/classified/select.tpl:65
+#: templates/admin/classified/view_quickNav.tpl:77
+#: templates/user/classified/view_quickNav.tpl:78
+msgid "Creator"
+msgstr ""
+
+#: templates/external/classified/find.tpl:105
+#: templates/external/classified/select.tpl:66
+#: templates/admin/classified/view_quickNav.tpl:78
+#: templates/user/classified/view_quickNav.tpl:79
+msgid "Update date"
+msgstr ""
+
+#: templates/external/classified/find.tpl:108
+#: templates/external/classified/select.tpl:69
+#: templates/admin/classified/view_quickNav.tpl:81
+#: templates/user/classified/view_quickNav.tpl:82
+msgid "ascending"
+msgstr ""
+
+#: templates/external/classified/find.tpl:109
+#: templates/external/classified/select.tpl:70
+#: templates/admin/classified/view_quickNav.tpl:82
+#: templates/user/classified/view_quickNav.tpl:83
+msgid "descending"
+msgstr ""
+
+#: templates/external/classified/find.tpl:114
+#: templates/admin/classified/view_quickNav.tpl:89
+#: templates/user/classified/view_quickNav.tpl:90
+msgid "Page size"
+msgstr ""
+
+#: templates/external/classified/find.tpl:127
+#: templates/external/classified/select.tpl:75
+msgid "Search for"
+msgstr ""
+
+#: templates/external/classified/find.tpl:129
+#: templates/external/classified/select.tpl:77
+msgid "Filter"
+msgstr ""
+
+#: templates/external/classified/find.tpl:135
+msgid "Change selection"
+msgstr ""
+
+#: templates/external/classified/find.tpl:136 templates/admin/config.tpl:44
+#: templates/admin/classified/edit.tpl:177
+#: templates/admin/classified/delete.tpl:22
+#: templates/user/classified/edit.tpl:171
+msgid "Cancel"
+msgstr ""
+
+#: templates/external/classified/select.tpl:4
+msgid "Classified information"
+msgstr ""
+
+#: templates/admin/config.tpl:4 templates/admin/config.tpl:7
+msgid "Settings"
+msgstr ""
+
+#: templates/admin/config.tpl:15
+msgid "Variables"
+msgstr ""
+
+#: templates/admin/config.tpl:19
+msgid "Here you can manage all basic settings for this application."
+msgstr ""
+
+#: templates/admin/config.tpl:22
+msgid "Standardtage für die Laufzeit der Kleinanzeige"
+msgstr ""
+
+#: templates/admin/config.tpl:23
+msgid "Defaultperiod"
+msgstr ""
+
+#: templates/admin/config.tpl:24
+msgid "Enter the defaultperiod. Only digits are allowed."
+msgstr ""
+
+#: templates/admin/config.tpl:27
+msgid "erlaubte maximalgröße von Bildern in Byte (z.B. 102400 für 100kb)"
+msgstr ""
+
+#: templates/admin/config.tpl:28
+msgid "Picmaxfilesize"
+msgstr ""
+
+#: templates/admin/config.tpl:29
+msgid "Enter the picmaxfilesize. Only digits are allowed."
+msgstr ""
+
+#: templates/admin/config.tpl:32
+msgid "Allowedextension"
+msgstr ""
+
+#: templates/admin/config.tpl:33
+msgid "Enter the allowedextension."
+msgstr ""
+
+#: templates/admin/config.tpl:36
+msgid "here we need a link to the terms and conditions"
+msgstr ""
+
+#: templates/admin/config.tpl:37
+msgid "Terms_link"
+msgstr ""
+
+#: templates/admin/config.tpl:38
+msgid "Enter the terms_link."
+msgstr ""
+
+#: templates/admin/config.tpl:43
+msgid "Update configuration"
+msgstr ""
+
+#: templates/admin/classified/display.tpl:9
+#: templates/admin/classified/view.tpl:90
+#: templates/admin/classified/view.tpl:160
+#: templates/user/classified/display.tpl:7
+#: templates/user/classified/display.tpl:28
+#: templates/user/classified/view.tpl:85
+#: templates/user/classified/view.tpl:152
+msgid "Actions"
+msgstr ""
+
+#: templates/admin/classified/display.tpl:13
+#: templates/admin/classified/view.tpl:58
+#: templates/user/classified/view.tpl:53
+msgid "State"
+msgstr ""
+
+#: templates/admin/classified/display.tpl:26
+#: templates/admin/classified/view.tpl:117
+#: templates/user/classified/display.tpl:34
+#: templates/user/classified/view.tpl:120
+msgid "Send an email"
+msgstr ""
+
+#: templates/admin/classified/display.tpl:53
+#: templates/admin/classified/display.tpl:56
+#: templates/admin/classified/view.tpl:144
+#: templates/admin/classified/view.tpl:147
+#: templates/user/classified/view.tpl:136
+#: templates/user/classified/view.tpl:139
+msgid "This setting is enabled. Click here to disable it."
+msgstr ""
+
+#: templates/admin/classified/display.tpl:54
+#: templates/admin/classified/display.tpl:57
+#: templates/admin/classified/view.tpl:145
+#: templates/admin/classified/view.tpl:148
+#: templates/user/classified/view.tpl:137
+#: templates/user/classified/view.tpl:140
+msgid "This setting is disabled. Click here to enable it."
+msgstr ""
+
+#: templates/admin/classified/view_quickNav.tpl:6
+#: templates/user/classified/view_quickNav.tpl:6
+msgid "Quick navigation"
+msgstr ""
+
+#: templates/admin/classified/view_quickNav.tpl:109
+#: templates/user/classified/view_quickNav.tpl:110
+msgid "OK"
+msgstr ""
+
+#: templates/admin/classified/include_displayItemListMany.tpl:16
+#: templates/admin/classified/include_displayItemListOne.tpl:13
+#: templates/user/classified/include_displayItemListMany.tpl:16
+#: templates/user/classified/include_displayItemListOne.tpl:13
+msgid "Open quick view window"
+msgstr ""
+
+#: templates/admin/classified/include_displayItemListMany.tpl:16
+#: templates/admin/classified/include_displayItemListOne.tpl:13
+#: templates/user/classified/include_displayItemListMany.tpl:16
+#: templates/user/classified/include_displayItemListOne.tpl:13
+msgid "Quick view"
+msgstr ""
+
+#: templates/admin/classified/view.tpl:19
+#: templates/user/classified/view.tpl:22
+msgid "Back to paginated view"
+msgstr ""
+
+#: templates/admin/classified/view.tpl:25
+#: templates/user/classified/view.tpl:28
+msgid "Show all entries"
+msgstr ""
+
+#: templates/admin/classified/view.tpl:104
+#: templates/user/classified/view.tpl:107
+msgid "View detail page"
+msgstr ""
+
+#: templates/admin/classified/view.tpl:173
+#: templates/user/classified/view.tpl:165
+#: templates/mailz/itemlist_classified_text.tpl:7
+#: templates/mailz/itemlist_classified_html.tpl:10
+msgid "No classifieds found."
+msgstr ""
+
+#: templates/admin/classified/view.tpl:185
+msgid "With selected classifieds"
+msgstr ""
+
+#: templates/admin/classified/view.tpl:187
+msgid "Choose action"
+msgstr ""
+
+#: templates/admin/classified/view.atom.tpl:5
+#: templates/admin/classified/view.rss.tpl:12
+#: templates/user/classified/view.atom.tpl:5
+#: templates/user/classified/view.rss.tpl:12
+msgid "A direct feed showing the list of classifieds"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:7
+#: templates/admin/classified/edit.tpl:13 templates/user/classified/edit.tpl:7
+#: templates/user/classified/edit.tpl:11
+msgid "Edit classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:10
+#: templates/user/classified/view.tpl:12 templates/user/classified/edit.tpl:9
+msgid "Create classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:28
+#: templates/user/classified/edit.tpl:22
+msgid "Content"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:32
+#: templates/user/classified/edit.tpl:26
+msgid "Enter the title of the classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:38
+#: templates/user/classified/edit.tpl:32
+msgid "Choose the kind"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:42
+#: templates/user/classified/edit.tpl:36
+msgid "the description of your offer or what you are looking for"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:44
+#: templates/user/classified/edit.tpl:38
+msgid "Enter the description of the classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:49
+#: templates/user/classified/edit.tpl:43
+msgid "The price you are willing to pay or what you want to get for your offer"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:51
+#: templates/user/classified/edit.tpl:45
+msgid "Enter the price of the classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:56
+#: templates/user/classified/edit.tpl:50
+msgid "the contact to your classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:58
+#: templates/user/classified/edit.tpl:52
+msgid "Enter the email of the classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:63
+#: templates/user/classified/edit.tpl:57
+msgid "your phone number for requests. It will be shown public."
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:65
+#: templates/user/classified/edit.tpl:59
+msgid "Enter the fon of the classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:69
+#: templates/user/classified/edit.tpl:63
+msgid "a picture oft your classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:72
+#: templates/user/classified/edit.tpl:66
+msgid "Reset to empty value"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:74
+#: templates/user/classified/edit.tpl:68
+msgid "Allowed file extensions:"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:75
+#: templates/user/classified/edit.tpl:69
+msgid "Allowed file size:"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:79
+#: templates/user/classified/edit.tpl:73
+msgid "Current file"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:89
+#: templates/user/classified/edit.tpl:83
+msgid "Delete picture ?"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:90
+#: templates/user/classified/edit.tpl:84
+msgid "Delete existing file"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:98
+#: templates/user/classified/edit.tpl:92
+msgid "the date when your classified should appear. Normaly right now."
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:101
+#: templates/admin/classified/edit.tpl:103
+#: templates/user/classified/edit.tpl:95 templates/user/classified/edit.tpl:97
+msgid "Enter the startdate of the classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:110
+#: templates/user/classified/edit.tpl:104
+msgid ""
+"the date when the classified shoud stop. This will be set automatically."
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:113
+#: templates/admin/classified/edit.tpl:115
+#: templates/user/classified/edit.tpl:107
+#: templates/user/classified/edit.tpl:109
+msgid "Enter the enddate of the classified"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:118
+#: templates/user/classified/edit.tpl:112
+msgid "Note: this value must be in the future."
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:125
+#: templates/user/classified/edit.tpl:119
+msgid ""
+"You have to accept the terms and conditions. Otherwhise your classified will "
+"not published."
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:127
+#: templates/user/classified/edit.tpl:121
+msgid "terms ?"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:129
+#: templates/user/classified/edit.tpl:123
+msgid "Link zu den Terms"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:156
+#: templates/user/classified/edit.tpl:150
+msgid "Return control"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:158
+#: templates/user/classified/edit.tpl:152
+msgid "Create another item after save"
+msgstr ""
+
+#: templates/admin/classified/edit.tpl:171
+#: templates/user/classified/edit.tpl:165
+msgid "Really delete this classified?"
+msgstr ""
+
+#: templates/admin/classified/delete.tpl:4
+msgid "Delete classified"
+msgstr ""
+
+#: templates/admin/classified/delete.tpl:11
+msgid "Do you really want to delete this classified ?"
+msgstr ""
+
+#: templates/admin/classified/delete.tpl:18
+msgid "Confirmation prompt"
+msgstr ""
+
+#: templates/admin/include_standardfields_display.tpl:4
+#: templates/admin/include_standardfields_display.tpl:7
+#: templates/user/include_standardfields_edit.tpl:4
+#: templates/user/include_standardfields_edit.tpl:9
+#: templates/user/include_standardfields_display.tpl:4
+#: templates/user/include_standardfields_display.tpl:7
+#: templates/ajax/include_standardfields_display.tpl:4
+#: templates/ajax/include_standardfields_display.tpl:7
+msgid "Creation and update"
+msgstr ""
+
+#: templates/admin/include_standardfields_display.tpl:11
+#: templates/user/include_standardfields_display.tpl:11
+#: templates/ajax/include_standardfields_display.tpl:11
+msgid "Creation"
+msgstr ""
+
+#: templates/admin/include_standardfields_display.tpl:22
+#: templates/user/include_standardfields_display.tpl:22
+#: templates/ajax/include_standardfields_display.tpl:22
+#, php-format
+msgid "Created by %1$s on %2$s"
+msgstr ""
+
+#: templates/admin/include_standardfields_display.tpl:25
+#: templates/user/include_standardfields_display.tpl:25
+#: templates/ajax/include_standardfields_display.tpl:25
+msgid "Last update"
+msgstr ""
+
+#: templates/admin/include_standardfields_display.tpl:36
+#: templates/user/include_standardfields_display.tpl:36
+#: templates/ajax/include_standardfields_display.tpl:36
+#, php-format
+msgid "Updated by %1$s on %2$s"
+msgstr ""
+
+#: templates/contenttype/item_edit.tpl:5
+#: templates/contenttype/itemlist_edit.tpl:4
+#: templates/block/itemlist_modify.tpl:3
+msgid "Object type"
+msgstr ""
+
+#: templates/contenttype/item_edit.tpl:8
+#: templates/contenttype/itemlist_edit.tpl:8
+msgid ""
+"If you change this please save the element once to reload the parameters "
+"below."
+msgstr ""
+
+#: templates/contenttype/item_edit.tpl:11
+msgid ""
+"Please select your item here. You can resort the dropdown list and reduce "
+"it's entries by applying filters. On the right side you will see a preview "
+"of the selected entry."
+msgstr ""
+
+#: templates/contenttype/item_edit.tpl:17
+msgid "Link to object"
+msgstr ""
+
+#: templates/contenttype/item_edit.tpl:19
+msgid "Embed object display"
+msgstr ""
+
+#: templates/contenttype/itemlist_classified_display.tpl:4
+#: templates/contenttype/itemlist_classified_display_description.tpl:8
+msgid "Read more"
+msgstr ""
+
+#: templates/contenttype/itemlist_edit.tpl:61
+#: templates/block/itemlist_modify.tpl:50
+msgid "Template"
+msgstr ""
+
+#: templates/contenttype/itemlist_edit.tpl:71
+#: templates/block/itemlist_modify.tpl:61
+msgid "Example"
+msgstr ""
+
+#: templates/user/classified/display.tpl:27
+msgid "Contact"
+msgstr ""
+
+#: templates/user/classified/view.tpl:104
+msgid "not available"
+msgstr ""
+
+#: templates/user/include_standardfields_edit.tpl:13
+#, php-format
+msgid "Created by %s"
+msgstr ""
+
+#: templates/user/include_standardfields_edit.tpl:14
+#, php-format
+msgid "Created on %s"
+msgstr ""
+
+#: templates/user/include_standardfields_edit.tpl:18
+#, php-format
+msgid "Updated by %s"
+msgstr ""
+
+#: templates/user/include_standardfields_edit.tpl:19
+#, php-format
+msgid "Updated on %s"
+msgstr ""
+
+#: templates/block/itemlist_modify.tpl:7
+msgid ""
+"If you change this please save the block once to reload the parameters below."
+msgstr ""
