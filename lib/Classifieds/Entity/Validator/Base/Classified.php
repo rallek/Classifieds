@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -87,20 +87,24 @@ class Classifieds_Entity_Validator_Base_Classified extends Classifieds_Validator
             $errorInfo['message'] = __f('Error! Length of field value must not be higher than %2$s (%1$s).', array('picture', 255), $dom);
             return $errorInfo;
         }
-        if (!$this->isValidDateTime('enddate')) {
-            $errorInfo['message'] = __f('Error! Field value must be a valid datetime (%s).', array('enddate'), $dom);
+        if (!$this->isStringNotLongerThan('picture2', 255)) {
+            $errorInfo['message'] = __f('Error! Length of field value must not be higher than %2$s (%1$s).', array('picture2', 255), $dom);
             return $errorInfo;
         }
-        if (!$this->isDateTimeInFuture('enddate', true)) {
-            $errorInfo['message'] = __f('Error! Field value must be a date in the future (%s).', array('enddate'), $dom);
+        if (!$this->isValidDateTime('classifiedEnd')) {
+            $errorInfo['message'] = __f('Error! Field value must be a valid datetime (%s).', array('classified end'), $dom);
+            return $errorInfo;
+        }
+        if (!$this->isDateTimeInFuture('classifiedEnd', true)) {
+            $errorInfo['message'] = __f('Error! Field value must be a date in the future (%s).', array('classified end'), $dom);
             return $errorInfo;
         }
         if (!$this->isValidBoolean('terms')) {
             $errorInfo['message'] = __f('Error! Field value must be a valid boolean (%s).', array('terms'), $dom);
             return $errorInfo;
         }
-        if ($this->entity['startdate'] > $this->entity['enddate']) {
-            $errorInfo['message'] = __f('Error! The start date (%1$s) must be before the end date (%2$s).', array('startdate', 'enddate'), $dom);
+        if ($this->entity['classifiedStart'] > $this->entity['classifiedEnd']) {
+            $errorInfo['message'] = __f('Error! The start date (%1$s) must be before the end date (%2$s).', array('classified start', 'classified end'), $dom);
             return $errorInfo;
         }
     

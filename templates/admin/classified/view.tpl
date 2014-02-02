@@ -8,7 +8,7 @@
         <h3>{$templateTitle}</h3>
     </div>
 
-    <p class="z-informationmsg">a module for goods you want to sell or you want to buy like a small version of ebay</p>
+    <p class="z-informationmsg">{gt text='a module for goods you want to sell or you want to buy'}</p>
 
     {assign var='own' value=0}
     {if isset($showOwnEntries) && $showOwnEntries eq 1}
@@ -43,8 +43,9 @@
                     <col id="cEmail" />
                     <col id="cFon" />
                     <col id="cPicture" />
-                    <col id="cStartdate" />
-                    <col id="cEnddate" />
+                    <col id="cPicture2" />
+                    <col id="cClassifiedStart" />
+                    <col id="cClassifiedEnd" />
                     <col id="cTerms" />
                     <col id="cItemActions" />
                 </colgroup>
@@ -78,11 +79,14 @@
                     <th id="hPicture" scope="col" class="z-left">
                         {sortlink __linktext='Picture' currentsort=$sort modname='Classifieds' type='admin' func='view' ot='classified' sort='picture' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
                     </th>
-                    <th id="hStartdate" scope="col" class="z-left">
-                        {sortlink __linktext='Startdate' currentsort=$sort modname='Classifieds' type='admin' func='view' ot='classified' sort='startdate' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
+                    <th id="hPicture2" scope="col" class="z-left">
+                        {sortlink __linktext='Picture2' currentsort=$sort modname='Classifieds' type='admin' func='view' ot='classified' sort='picture2' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
                     </th>
-                    <th id="hEnddate" scope="col" class="z-left">
-                        {sortlink __linktext='Enddate' currentsort=$sort modname='Classifieds' type='admin' func='view' ot='classified' sort='enddate' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
+                    <th id="hClassifiedStart" scope="col" class="z-left">
+                        {sortlink __linktext='Classified start' currentsort=$sort modname='Classifieds' type='admin' func='view' ot='classified' sort='classifiedStart' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
+                    </th>
+                    <th id="hClassifiedEnd" scope="col" class="z-left">
+                        {sortlink __linktext='Classified end' currentsort=$sort modname='Classifieds' type='admin' func='view' ot='classified' sort='classifiedEnd' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
                     </th>
                     <th id="hTerms" scope="col" class="z-center">
                         {sortlink __linktext='Terms' currentsort=$sort modname='Classifieds' type='admin' func='view' ot='classified' sort='terms' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
@@ -101,7 +105,7 @@
                         {$classified.workflowState|classifiedsObjectState}
                     </td>
                     <td headers="hTitle" class="z-left">
-                        <a href="{modurl modname='Classifieds' type='admin' func='display' ot='classified' id=$classified.id}" title="{gt text='View detail page'}">{$classified.title|notifyfilters:'classifieds.filterhook.classifieds'}</a>
+                        {$classified.title}
                     </td>
                     <td headers="hKind" class="z-left">
                         {$classified.kind|classifiedsGetListEntry:'classified':'kind'|safetext}
@@ -129,11 +133,22 @@
                           </a>
                         {else}&nbsp;{/if}
                     </td>
-                    <td headers="hStartdate" class="z-left">
-                        {$classified.startdate|dateformat:'datetimebrief'}
+                    <td headers="hPicture2" class="z-left">
+                        {if $classified.picture2 ne ''}
+                          <a href="{$classified.picture2FullPathURL}" title="{$classified->getTitleFromDisplayPattern()|replace:"\"":""}"{if $classified.picture2Meta.isImage} rel="imageviewer[classified]"{/if}>
+                          {if $classified.picture2Meta.isImage}
+                              {thumb image=$classified.picture2FullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture2 tag=true img_alt=$classified->getTitleFromDisplayPattern()}
+                          {else}
+                              {gt text='Download'} ({$classified.picture2Meta.size|classifiedsGetFileSize:$classified.picture2FullPath:false:false})
+                          {/if}
+                          </a>
+                        {else}&nbsp;{/if}
                     </td>
-                    <td headers="hEnddate" class="z-left">
-                        {$classified.enddate|dateformat:'datetimebrief'}
+                    <td headers="hClassifiedStart" class="z-left">
+                        {$classified.classifiedStart|dateformat:'datetimebrief'}
+                    </td>
+                    <td headers="hClassifiedEnd" class="z-left">
+                        {$classified.classifiedEnd|dateformat:'datetimebrief'}
                     </td>
                     <td headers="hTerms" class="z-center">
                         {assign var='itemid' value=$classified.id}
@@ -168,7 +183,7 @@
                 </tr>
             {foreachelse}
                 <tr class="z-admintableempty">
-                  <td class="z-left" colspan="13">
+                  <td class="z-left" colspan="14">
                 {gt text='No classifieds found.'}
                   </td>
                 </tr>

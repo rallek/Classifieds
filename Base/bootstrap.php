@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -36,15 +36,17 @@ function clfsPerformRegularAmendments()
 
     $randProbability = mt_rand(1, 1000);
 
-    if ($randProbability < 850) {
+    if ($randProbability < 750) {
         return;
     }
 
+    PageUtil::registerVar('ClassifiedsAutomaticArchiving', false, true);
     $entityManager = ServiceUtil::getService('doctrine.entitymanager');
 
     // update for classifieds becoming archived
     $entityClass = 'Classifieds_Entity_Classified';
     $repository = $entityManager->getRepository($entityClass);
     $repository->archiveObjects();
+    PageUtil::setVar('ClassifiedsAutomaticArchiving', false);
 }
 

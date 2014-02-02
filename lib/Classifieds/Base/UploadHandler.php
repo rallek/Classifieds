@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -44,7 +44,7 @@ class Classifieds_Base_UploadHandler
         $this->allowedObjectTypes = array('classified');
         $this->imageFileTypes = array('gif', 'jpeg', 'jpg', 'png', 'swf');
         $this->forbiddenFileTypes = array('cgi', 'pl', 'asp', 'phtml', 'php', 'php3', 'php4', 'php5', 'exe', 'com', 'bat', 'jsp', 'cfm', 'shtml');
-        $this->allowedFileSizes = array('classified' => array('picture' => 102400));
+        $this->allowedFileSizes = array('classified' => array('picture' => 102400, 'picture2' => 102400));
     }
 
     /**
@@ -137,6 +137,7 @@ class Classifieds_Base_UploadHandler
             return LogUtil::registerError(__('Error! This file type is not allowed. Please choose another file format.', $dom));
         }
     
+        // validate file size
         $maxSize = $this->allowedFileSizes[$objectType][$fieldName];
         if ($maxSize > 0) {
             $fileSize = filesize($file['tmp_name']);
@@ -227,7 +228,14 @@ class Classifieds_Base_UploadHandler
         $allowedExtensions = array();
         switch ($objectType) {
             case 'classified':
-                $allowedExtensions = array('gif', 'jpeg', 'jpg', 'png');
+                switch ($fieldName) {
+                    case 'picture':
+                        $allowedExtensions = array('gif', 'jpeg', 'jpg', 'png');
+                        break;
+                    case 'picture2':
+                        $allowedExtensions = array('gif', 'jpeg', 'jpg', 'png');
+                        break;
+                }
                     break;
         }
     
@@ -265,7 +273,14 @@ class Classifieds_Base_UploadHandler
     
         switch ($objectType) {
             case 'classified':
-                $namingScheme = 0;
+                switch ($fieldName) {
+                    case 'picture':
+                        $namingScheme = 0;
+                        break;
+                    case 'picture2':
+                        $namingScheme = 0;
+                        break;
+                }
                     break;
         }
     

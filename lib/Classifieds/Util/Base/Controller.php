@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -60,7 +60,7 @@ class Classifieds_Util_Base_Controller extends Zikula_AbstractBase
      *
      * @param string $objectType The object type to retrieve.
      *
-     * @boolean Whether composite keys are used or not.
+     * @return boolean Whether composite keys are used or not.
      */
     public function hasCompositeKeys($objectType)
     {
@@ -165,7 +165,15 @@ class Classifieds_Util_Base_Controller extends Zikula_AbstractBase
     
         switch ($objectType) {
             case 'classified':
-                $basePath .= 'classifieds/clsf_pict/';
+                $basePath .= 'classifieds/';
+                switch ($fieldName) {
+                    case 'picture':
+                        $basePath .= 'clsf_pict/';
+                        break;
+                    case 'picture2':
+                        $basePath .= 'clsf_pict/';
+                        break;
+                }
             break;
         }
     
@@ -192,6 +200,7 @@ class Classifieds_Util_Base_Controller extends Zikula_AbstractBase
         $result = true;
     
         $result &= $this->checkAndCreateUploadFolder('classified', 'picture', 'gif, jpeg, jpg, png');
+        $result &= $this->checkAndCreateUploadFolder('classified', 'picture2', 'gif, jpeg, jpg, png');
     
         return $result;
     }

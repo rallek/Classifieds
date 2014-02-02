@@ -19,7 +19,7 @@
     {formsetinitialfocus inputId='title'}
 
     <fieldset>
-        <legend>{gt text='Content++'}</legend>
+        <legend>{gt text='Content'}</legend>
         
         <div class="z-formrow">
             {formlabel for='title' __text='Title' mandatorysym='1' cssClass=''}
@@ -64,17 +64,17 @@
             {gt text='a picture oft your classified' assign='toolTip'}
             {formlabel for='picture' __text='Picture' cssClass='classifieds-form-tooltips' title=$toolTip}<br />{* break required for Google Chrome *}
             {formuploadinput group='classified' id='picture' mandatory=false readOnly=false cssClass=' validate-upload' }
-            <span class="z-formnote"><a id="resetPictureVal" href="javascript:void(0);" class="z-hide">{gt text='Reset to empty value'}</a></span>
+            <span class="z-formnote"><a id="resetPictureVal" href="javascript:void(0);" class="z-hide" style="clear:left;">{gt text='Reset to empty value'}</a></span>
             
                 <span class="z-formnote">{gt text='Allowed file extensions:'} <span id="pictureFileExtensions">gif, jpeg, jpg, png</span></span>
-            <span class="z-formnote">{gt text='Allowed file size:'} {$modvars.Classifieds.picmaxfilesize|classifiedsGetFileSize:'':false:false}</span>
+            <span class="z-formnote">{gt text='Allowed file size:'} {$modvars.Classifieds.pictureFileSize|classifiedsGetFileSize:'':false:false}</span>
             {if $mode ne 'create'}
                 {if $classified.picture ne ''}
                     <span class="z-formnote">
                         {gt text='Current file'}:
-                        <a href="{$classified.pictureFullPathUrl}" {if $classified.pictureMeta.isImage} rel="imageviewer[classified]"{/if}>
+                        <a href="{$classified.pictureFullPathUrl}" title="{$formattedEntityTitle|replace:"\"":""}"{if $classified.pictureMeta.isImage} rel="imageviewer[classified]"{/if}>
                         {if $classified.pictureMeta.isImage}
-                            {thumb image=$classified.pictureFullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture tag=true}
+                            {thumb image=$classified.pictureFullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture tag=true img_alt=$formattedEntityTitle}
                         {else}
                             {gt text='Download'} ({$classified.pictureMeta.size|classifiedsGetFileSize:$classified.pictureFullPath:false:false})
                         {/if}
@@ -90,30 +90,59 @@
         </div>
         
         <div class="z-formrow">
-            {gt text='the date when your classified should appear. Normaly right now.' assign='toolTip'}
-            {formlabel for='startdate' __text='Startdate' cssClass='classifieds-form-tooltips' title=$toolTip}
+            {gt text='you can add another picture' assign='toolTip'}
+            {formlabel for='picture2' __text='Picture2' cssClass='classifieds-form-tooltips' title=$toolTip}<br />{* break required for Google Chrome *}
+            {formuploadinput group='classified' id='picture2' mandatory=false readOnly=false cssClass=' validate-upload' }
+            <span class="z-formnote"><a id="resetPicture2Val" href="javascript:void(0);" class="z-hide" style="clear:left;">{gt text='Reset to empty value'}</a></span>
+            
+                <span class="z-formnote">{gt text='Allowed file extensions:'} <span id="picture2FileExtensions">gif, jpeg, jpg, png</span></span>
+            <span class="z-formnote">{gt text='Allowed file size:'} {$modvars.Classifieds.pictureFileSize|classifiedsGetFileSize:'':false:false}</span>
             {if $mode ne 'create'}
-                {formdateinput group='classified' id='startdate' mandatory=false __title='Enter the startdate of the classified' includeTime=true cssClass='' }
+                {if $classified.picture2 ne ''}
+                    <span class="z-formnote">
+                        {gt text='Current file'}:
+                        <a href="{$classified.picture2FullPathUrl}" title="{$formattedEntityTitle|replace:"\"":""}"{if $classified.picture2Meta.isImage} rel="imageviewer[classified]"{/if}>
+                        {if $classified.picture2Meta.isImage}
+                            {thumb image=$classified.picture2FullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture2 tag=true img_alt=$formattedEntityTitle}
+                        {else}
+                            {gt text='Download'} ({$classified.picture2Meta.size|classifiedsGetFileSize:$classified.picture2FullPath:false:false})
+                        {/if}
+                        </a>
+                    </span>
+                    <span class="z-formnote">
+                        {formcheckbox group='classified' id='picture2DeleteFile' readOnly=false __title='Delete picture2 ?'}
+                        {formlabel for='picture2DeleteFile' __text='Delete existing file'}
+                    </span>
+                {/if}
+            {/if}
+            {classifiedsValidationError id='picture2' class='validate-upload'}
+        </div>
+        
+        <div class="z-formrow">
+            {gt text='the date when your classified should appear. Normaly right now.' assign='toolTip'}
+            {formlabel for='classifiedStart' __text='Classified start' cssClass='classifieds-form-tooltips' title=$toolTip}
+            {if $mode ne 'create'}
+                {formdateinput group='classified' id='classifiedStart' mandatory=false __title='Enter the classified start of the classified' includeTime=true cssClass='' }
             {else}
-                {formdateinput group='classified' id='startdate' mandatory=false __title='Enter the startdate of the classified' includeTime=true defaultValue='now' cssClass='' }
+                {formdateinput group='classified' id='classifiedStart' mandatory=false __title='Enter the classified start of the classified' includeTime=true defaultValue='now' cssClass='' }
             {/if}
             
-            {classifiedsValidationError id='startdate' class='validate-daterange-classified'}
+            {classifiedsValidationError id='classifiedStart' class='validate-daterange-classified'}
         </div>
         
         <div class="z-formrow">
             {gt text='the date when the classified shoud stop. This will be set automatically.' assign='toolTip'}
-            {formlabel for='enddate' __text='Enddate' mandatorysym='1' cssClass='classifieds-form-tooltips' title=$toolTip}
+            {formlabel for='classifiedEnd' __text='Classified end' mandatorysym='1' cssClass='classifieds-form-tooltips' title=$toolTip}
             {if $mode ne 'create'}
-                {formdateinput group='classified' id='enddate' mandatory=true __title='Enter the enddate of the classified' includeTime=true cssClass='required validate-DateTime-future' }
+                {formdateinput group='classified' id='classifiedEnd' mandatory=true __title='Enter the classified end of the classified' includeTime=true cssClass='required validate-DateTime-future' }
             {else}
-                {formdateinput group='classified' id='enddate' mandatory=true __title='Enter the enddate of the classified' includeTime=true defaultValue='custom' cssClass='required validate-DateTime-future' initDate="+`$modvars.Classifieds.defaultperiod` day" }
+                {formdateinput group='classified' id='classifiedEnd' mandatory=true __title='Enter the classified end of the classified' includeTime=true defaultValue='custom' cssClass='required validate-DateTime-future'  initDate="+`$modvars.Classifieds.defaultPeriod` day" }
             {/if}
             
             <span class="z-formnote">{gt text='Note: this value must be in the future.'}</span>
-            {classifiedsValidationError id='enddate' class='required'}
-            {classifiedsValidationError id='enddate' class='validate-DateTime-past'}
-            {classifiedsValidationError id='enddate' class='validate-daterange-classified'}
+            {classifiedsValidationError id='classifiedEnd' class='required'}
+            {classifiedsValidationError id='classifiedEnd' class='validate-DateTime-past'}
+            {classifiedsValidationError id='classifiedEnd' class='validate-daterange-classified'}
         </div>
         
         <div class="z-formrow">
@@ -218,6 +247,7 @@
 
         Zikula.UI.Tooltips($$('.classifieds-form-tooltips'));
         clfsInitUploadField('picture');
+        clfsInitUploadField('picture2');
     });
 
 /* ]]> */

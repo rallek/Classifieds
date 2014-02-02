@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -219,6 +219,11 @@ class Classifieds_Util_Base_ListEntries extends Zikula_AbstractBase
                           'default' => true);
         $states[] = array('value'   => 'search',
                           'text'    => $this->__('Search'),
+                          'title'   => '',
+                          'image'   => '',
+                          'default' => false);
+        $states[] = array('value'   => 'exchange',
+                          'text'    => $this->__('Exchange'),
                           'title'   => '',
                           'image'   => '',
                           'default' => false);

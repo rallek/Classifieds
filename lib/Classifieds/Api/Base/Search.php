@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -94,6 +94,7 @@ class Classifieds_Api_Base_Search extends Zikula_AbstractApi
                     $whereArray[] = 'tbl.email';
                     $whereArray[] = 'tbl.fon';
                     $whereArray[] = 'tbl.picture';
+                    $whereArray[] = 'tbl.picture2';
                     break;
             }
             $where = Search_Api_User::construct_where($args, $whereArray, $languageField);

@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -43,6 +43,7 @@ class Classifieds_Controller_Base_Admin extends Zikula_AbstractController
     
     /**
      * This method provides a generic item detail view.
+     * shows your Classiefied
      *
      * @param string  $ot           Treated object type.
      * @param string  $tpl          Name of alternative template (for alternative display options, feeds and xml output)
@@ -122,6 +123,7 @@ class Classifieds_Controller_Base_Admin extends Zikula_AbstractController
     
     /**
      * This method provides a generic item list overview.
+     * Overview of Classiefieds
      *
      * @param string  $ot           Treated object type.
      * @param string  $sort         Sorting field.

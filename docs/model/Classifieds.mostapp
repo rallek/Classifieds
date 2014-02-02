@@ -7,20 +7,40 @@ application Classifieds {
 	version "0.2.5"
 	prefix clfs
 	modelPath ""
-	targetCoreVersion ZK135
+	generatorSettings {
+		settingsContainer targetCoreVersion ZK136
+		generateMailzApi false
+		generateListBlock false
+		generateModerationBlock false
+		generateListContentType true
+		generateDetailContentType false
+		generateNewsletterPlugin false
+		generateModerationPanel false
+		generatePendingContentSupport false
+		generateScribitePlugins false
+		generateRssTemplates false
+		generateAtomTemplates false
+		generateCsvTemplates false
+		generateXmlTemplates false
+		generateJsonTemplates false
+		generateKmlTemplates false
+		generateOnlyBaseClasses true
+		generateTests false
+		skipFiles "README.md,CHANGELOG.md"
+	}
 	modelLayer {
 		modelContainer Model {
 			numExampleRows 0
 			entities {
 				entity classified leading categorisable categorisableMultiSelection {
-					documentation "a module for goods you want to sell or you want to buy like a small version of ebay"
+					documentation "a module for goods you want to sell or you want to buy"
 					nameMultiple classifieds
-					workflow NONE
+					displayPattern "#kind#: #title#"
 					hasArchive true
 					hasTray true
 					ownerPermission true
 					fields {
-						string title leading {
+						string title {
 							defaultValue ""
 						},
 						list kind  {
@@ -58,6 +78,8 @@ application Classifieds {
 						upload picture2 {
 							documentation "you can add another picture"
 							mandatory false
+							subFolderName clsf_pict
+							allowedFileSize 102400
 						},
 						datetime classifiedStart  startDate {
 							documentation "the date when your classified should appear. Normaly right now."
@@ -79,6 +101,10 @@ application Classifieds {
 			variables {
 				varContainer Variables {
 					vars {
+						intVar pageSize {
+							documentation "default of items per page"
+							value "20"
+						},
 						intVar defaultPeriod {
 							documentation "Standardtage für die Laufzeit der Kleinanzeige"
 							value "60"
@@ -92,19 +118,16 @@ application Classifieds {
 							documentation "the maximum filesize of the uploaded pictures (in byte, e.g. 102400 for 100kb)"
 							value "204800"
 						},
-						textVar allowedExtension {
-							value "gif, jpeg, jpg, png"
-						},
-						intVar pictureHight {
-							documentation "maximal hight of the picture"
+						intVar pictureHeight {
+							documentation "maximal height of the picture"
 							value "200"
 						},
 						intVar pictureWidth {
 							documentation "maximal width of the picture"
 							value "200"
 						},
-						intVar thumbPictureHight {
-							documentation "maximal hight of the picture thumbnail"
+						intVar thumbPictureHeight {
+							documentation "maximal height of the picture thumbnail"
 							value "64"
 						},
 						intVar thumbPictureWidth {
@@ -147,15 +170,18 @@ application Classifieds {
 				adminController Admin {
 					actions {
 						mainAction Main,
-						displayAction Display,
-						viewAction View,
+						displayAction Display {
+							documentation "shows your Classiefied"
+						},
+						viewAction View {
+							documentation "Overview of Classiefieds"
+						},
 						deleteAction Delete
 					}
 				},
 				ajaxController Ajax {
 					actions {
-						mainAction Main,
-						displayAction Display
+						mainAction Main
 					}
 				},
 				userController User {

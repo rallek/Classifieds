@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -342,7 +342,6 @@ class Classifieds_Form_Handler_User_Base_Edit extends Zikula_Form_AbstractHandle
                 return LogUtil::registerError($this->__('No such item.'));
             }
             $entity = clone $entityT;
-            $entity->resetWorkflow();
         } else {
             $entityClass = $this->name . '_Entity_' . ucfirst($this->objectType);
             $entity = new $entityClass();
@@ -402,8 +401,6 @@ class Classifieds_Form_Handler_User_Base_Edit extends Zikula_Form_AbstractHandle
         $codes[] = 'adminDisplay';
         // main page of ajax area
         $codes[] = 'ajax';
-        // ajax display page of treated entity
-        $codes[] = 'ajaxDisplay';
         // main page of user area
         $codes[] = 'user';
         // user list of entities

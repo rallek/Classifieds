@@ -87,14 +87,14 @@ function clfsAddCommonValidationRules(objectType, id)
         ['validate-daterange-classified', Zikula.__('The start must be before the end.', 'module_classifieds_js'), function(val, elem) {
             var cmpVal, cmpVal2, result;
 
-            cmpVal = clfsReadDate($F('startdate'), true);
-            cmpVal2 = clfsReadDate($F('enddate'), true);
+            cmpVal = clfsReadDate($F('classifiedStart'), true);
+            cmpVal2 = clfsReadDate($F('classifiedEnd'), true);
             result = (cmpVal <= cmpVal2);
             if (result) {
-                $('advice-validate-daterange-classified-startdate').hide();
-                $('advice-validate-daterange-classified-enddate').hide();
-                $('startdate').removeClassName('validation-failed').addClassName('validation-passed');
-                $('enddate').removeClassName('validation-failed').addClassName('validation-passed');
+                $('advice-validate-daterange-classified-classifiedStart').hide();
+                $('advice-validate-daterange-classified-classifiedEnd').hide();
+                $('classifiedStart').removeClassName('validation-failed').addClassName('validation-passed');
+                $('classifiedEnd').removeClassName('validation-failed').addClassName('validation-passed');
             }
 
             return false;

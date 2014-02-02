@@ -6,7 +6,7 @@
     {pagesetvar name='title' value=$templateTitle|@html_entity_decode}
     <div class="z-admin-content-pagetitle">
         {icon type='display' size='small' __alt='Details'}
-        <h3>{$templateTitle|notifyfilters:'classifieds.filter_hooks.classifieds.filter'} <small>{$classified.workflowState|classifiedsObjectState:false|lower})</small>{icon id='itemActionsTrigger' type='options' size='extrasmall' __alt='Actions' class='z-pointer z-hide'}</h3>
+        <h3>{$templateTitle|notifyfilters:'classifieds.filter_hooks.classifieds.filter'} <small>({$classified.workflowState|classifiedsObjectState:false|lower})</small>{icon id='itemActionsTrigger' type='options' size='extrasmall' __alt='Actions' class='z-pointer z-hide'}</h3>
     </div>
 
     <dl>
@@ -40,10 +40,21 @@
           </a>
         {else}&nbsp;{/if}
         </dd>
-        <dt>{gt text='Startdate'}</dt>
-        <dd>{$classified.startdate|dateformat:'datetimebrief'}</dd>
-        <dt>{gt text='Enddate'}</dt>
-        <dd>{$classified.enddate|dateformat:'datetimebrief'}</dd>
+        <dt>{gt text='Picture2'}</dt>
+        <dd>{if $classified.picture2 ne ''}
+          <a href="{$classified.picture2FullPathURL}" title="{$classified->getTitleFromDisplayPattern()|replace:"\"":""}"{if $classified.picture2Meta.isImage} rel="imageviewer[classified]"{/if}>
+          {if $classified.picture2Meta.isImage}
+              {thumb image=$classified.picture2FullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture2 tag=true img_alt=$classified->getTitleFromDisplayPattern()}
+          {else}
+              {gt text='Download'} ({$classified.picture2Meta.size|classifiedsGetFileSize:$classified.picture2FullPath:false:false})
+          {/if}
+          </a>
+        {else}&nbsp;{/if}
+        </dd>
+        <dt>{gt text='Classified start'}</dt>
+        <dd>{$classified.classifiedStart|dateformat:'datetimebrief'}</dd>
+        <dt>{gt text='Classified end'}</dt>
+        <dd>{$classified.classifiedEnd|dateformat:'datetimebrief'}</dd>
         <dt>{gt text='Terms'}</dt>
         <dd>{assign var='itemid' value=$classified.id}
         <a id="toggleTerms{$itemid}" href="javascript:void(0);" class="z-hide">

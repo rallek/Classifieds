@@ -2,7 +2,7 @@
 /**
  * Classifieds.
  *
- * @copyright Ralf Koester (RK)
+ * @copyright Ralf Koester (Rallek)
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
  * @package Classifieds
  * @author Ralf Koester <ralf@familie-koester.de>.
@@ -17,4 +17,12 @@
 class Classifieds_UploadHandler extends Classifieds_Base_UploadHandler
 {
     // feel free to add your upload handler enhancements here
+    public function __construct()
+    {
+        $this->allowedObjectTypes = array('classified');
+        $this->imageFileTypes = array('gif', 'jpeg', 'jpg', 'png', 'swf');
+        $this->forbiddenFileTypes = array('cgi', 'pl', 'asp', 'phtml', 'php', 'php3', 'php4', 'php5', 'exe', 'com', 'bat', 'jsp', 'cfm', 'shtml');
+        $this->allowedFileSizes['classified']['picture'] = ModUtil::getVar('Classifieds', 'pictureFileSize', 102400);
+        $this->allowedFileSizes['classified']['picture2'] = ModUtil::getVar('Classifieds', 'pictureFileSize', 102400);
+    } 
 }
