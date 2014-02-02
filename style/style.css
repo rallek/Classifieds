@@ -4,6 +4,61 @@ div#z-maincontent.z-module-classifieds table tbody tr td {
 }
 
 /* display pages */
+.clfs-display-all{
+	float: left;
+	width: 95%;
+	background: linear-gradient(#FAFAFA, #F2F2F2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #333333;
+    margin: 0 0 1em;
+    padding: 0.5em 1em;
+	}
+.clfs-display{
+	float: left;
+	width: 60%;
+}
+.clfs-display-picture {
+	background: linear-gradient(#FEFEFE, #FAFAFA) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #333333;
+    margin: 0 0 1em;
+    padding: 0.5em 1em;
+	text-align:: center;
+}
+.clfs-display-details {
+	float: right;
+	width: 34%;
+	background: linear-gradient(#E1E1E1, #C4C4C4) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #333333;
+    margin: 0 0 1em;
+    padding: 0.5em 1em;
+	min-height: 520px;
+}
+.clfs-display-description{
+	background: linear-gradient(#FEFEFE, #FAFAFA) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #333333;
+    margin: 0 0 1em;
+    padding: 0.5em 1em;
+	min-height: 340px;
+}
+.clfs-display-creation {
+	float: left;
+	width: 96.5%;
+	clear: both;
+	background: linear-gradient(#FAFAFA, #F2F2F2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #8A8A7B;
+    margin: 0 0 1em;
+    padding: 0.5em 1em;
+}
+
 .classifieds-display.with-rightbox div.z-panel-content {
     float: left;
     width: 79%;

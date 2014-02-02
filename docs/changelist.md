@@ -113,6 +113,12 @@ and
 	{/if}
 ````
 
+### Layout
+several classes in style.css added and by div grouping managed (to many details for this documentation, see file)
+
+## style.css
+several classes for display.tpl added
+
 ## image.php
 we make the picsices customizable. Copy from base ``Classifieds\lib\Classifieds\Util\Base\Image.php``
 ````
@@ -131,5 +137,8 @@ into the custom class ``Classifieds\lib\Classifieds\Util\Image.php`` and modify 
 		$presetData['height'] = ModUtil::getVar('Classifieds', 'pictureHeight', 200); //150;
 ````
 
-
+## user display.tpl
+* delete Workflowstate
+* delete dd/dt of state, kind, title and terms
+*
  
