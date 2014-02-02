@@ -67,6 +67,11 @@ make a link of the title:
 
 **ToDo** in a next step we will arrange all the table items propperly in one column
 
+* move Kind, description and enddate into column title and arrange with span the classes z-bold, z-sub and z-normal. Move pictures at the first column
+* clean the headlines (Sorting of pictures makes no sence)
+* chepermissionsblock around the action list with admin rights
+* delete ``<p class="z-informationmsg">{gt text='a module for goods you want to sell or you want to buy'}</p>``
+
 ### quickNav adjustments
 ````{include file='user/classified/view_quickNav.tpl' all=$all own=$own}{* see template file for available options *}````
 change to

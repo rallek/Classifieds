@@ -42,7 +42,7 @@
                 {foreach item='option' from=$workflowStateItems}
                 <option value="{$option.value}"{if $option.title ne ''} title="{$option.title|safetext}"{/if}{if $option.value eq $workflowState} selected="selected"{/if}>{$option.text|safetext}</option>
                 {/foreach}
-                </select></br>
+                </select>
         {/if}
         {if !isset($kindFilter) || $kindFilter eq true}
                 <label for="kind">{gt text='Kind'}</label>
@@ -55,7 +55,7 @@
         {/if}
         {if !isset($searchFilter) || $searchFilter eq true}
                 <label for="searchTerm">{gt text='Search'}</label>
-                <input type="text" id="searchTerm" name="searchterm" value="{$searchterm}" />
+                <input type="text" id="searchTerm" name="searchterm" value="{$searchterm}" /></br>
         {/if}
         {if !isset($sorting) || $sorting eq true}
                 <label for="sortBy">{gt text='Sort by'}</label>

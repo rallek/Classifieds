@@ -5,7 +5,7 @@
     {pagesetvar name='title' value=$templateTitle}
     <h2>{$templateTitle}</h2>
 
-    <p class="z-informationmsg">{gt text='a module for goods you want to sell or you want to buy'}</p>
+    
 
     {if $canBeCreated}
         {checkpermissionblock component='Classifieds:Classified:' instance='::' level='ACCESS_READ'}
@@ -33,54 +33,34 @@
 
     <table class="z-datatable">
         <colgroup>
+            <col id="cPicture" /> 			
 			<col id="cTitle" />
-            <col id="cKind" />
-            <col id="cDescription" />
             <col id="cPrice" />           
-            <col id="cPicture" />    
-            <col id="cClassifiedEnd" />
+			{checkpermissionblock component='Classifieds:Classified:' instance='::' level='ACCESS_ADMIN'}
 			<col id="cItemActions" />
+			{/checkpermissionblock}
         </colgroup>
         <thead>
         <tr>
             {assign var='catIdListMainString' value=','|implode:$catIdList.Main}
-            <th id="hTitle" scope="col" class="z-left">
+             <th id="hPicture" scope="col" class="z-left z-order-unsorted">
+                {gt text='Picture'}
+            </th>           
+			<th id="hTitle" scope="col" class="z-left">
                 {sortlink __linktext='Title' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='title' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
-            </th>
-            <th id="hKind" scope="col" class="z-left">
-                {sortlink __linktext='Kind' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='kind' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
-            </th>
-            <th id="hDescription" scope="col" class="z-left">
-                {sortlink __linktext='Description' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='description' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
             </th>
             <th id="hPrice" scope="col" class="z-right">
                 {sortlink __linktext='Price' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='price' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
             </th>
-            <th id="hPicture" scope="col" class="z-left">
-                {sortlink __linktext='Picture' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='picture' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
-            </th>
-            <th id="hClassifiedEnd" scope="col" class="z-left">
-                {sortlink __linktext='Classified end' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='classifiedEnd' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
-            </th>
+			{checkpermissionblock component='Classifieds:Classified:' instance='::' level='ACCESS_ADMIN'}
             <th id="hItemActions" scope="col" class="z-right z-order-unsorted">{gt text='Actions'}</th>
+			{/checkpermissionblock}
         </tr>
         </thead>
         <tbody>
     
     {foreach item='classified' from=$items}
         <tr class="{cycle values='z-odd, z-even'}">
-            <td headers="hTitle" class="z-left">
-                <a href="{modurl modname='Classifieds' type='user' func='display' ot='classified' id=$classified.id}" title="{gt text='View detail page'}">{$classified.title}</a>
-            </td>
-            <td headers="hKind" class="z-left">
-                {$classified.kind|classifiedsGetListEntry:'classified':'kind'|safetext}
-            </td>
-            <td headers="hDescription" class="z-left">
-                {$classified.description|truncate:30:"..."}
-            </td>
-            <td headers="hPrice" class="z-right">
-                {$classified.price|formatcurrency}
-            </td>
             <td headers="hPicture" class="z-left">
                 {if $classified.picture ne ''}
                   <a href="{$classified.pictureFullPathURL}" title="{$classified->getTitleFromDisplayPattern()|replace:"\"":""}"{if $classified.pictureMeta.isImage} rel="imageviewer[classified]"{/if}>
@@ -91,9 +71,18 @@
                   {/if}
                   </a>
                 {else}&nbsp;{/if}
+            </td>            
+			<td headers="hTitle" class="z-left">
+                <span class="z-bold"><a href="{modurl modname='Classifieds' type='user' func='display' ot='classified' id=$classified.id}" title="{gt text='View detail page'}">{$classified.title}</a></span>
+				<span <span class="z-sub">({$classified.kind|classifiedsGetListEntry:'classified':'kind'|safetext})</span></br>
+				{$classified.description|truncate:30:"..."}</br>
+				<span <span class="z-sub">{gt text='ending'}: {$classified.classifiedEnd|dateformat:'datetimebrief'}</span>
             </td>
-            <td headers="hClassifiedEnd" class="z-left">
-                {$classified.classifiedEnd|dateformat:'datetimebrief'}
+
+            <td headers="hPrice" class="z-right">
+                {$classified.price|formatcurrency}
+            </td>
+			{checkpermissionblock component='Classifieds:Classified:' instance='::' level='ACCESS_ADMIN'}
             <td id="itemActions{$classified.id}" headers="hItemActions" class="z-right z-nowrap z-w02">
                 {if count($classified._actions) gt 0}
                     {foreach item='option' from=$classified._actions}
@@ -109,6 +98,7 @@
                     </script>
                 {/if}
             </td>
+			{/checkpermissionblock}
         </tr>
     {foreachelse}
         <tr class="z-datatableempty">
