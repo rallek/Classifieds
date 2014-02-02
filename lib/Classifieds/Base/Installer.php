@@ -53,11 +53,11 @@ class Classifieds_Base_Installer extends Zikula_AbstractInstaller
         $this->setVar('pictureWidth', 200);
         $this->setVar('thumbPictureHeight', 64);
         $this->setVar('thumbPictureWidth', 64);
-        $this->setVar('pictureDummy', '');
+        $this->setVar('pictureDummy', '/images/dummy.png');
         $this->setVar('useWatermark', false);
         $this->setVar('typWatermark',  'text' );
-        $this->setVar('watermarkPicture', '/images/watermark.jpg');
-        $this->setVar('textWatermark', '');
+        $this->setVar('watermarkPicture', '/images/watermark.png');
+        $this->setVar('textWatermark', 'copyright');
     
         $categoryRegistryIdsPerEntity = array();
     
