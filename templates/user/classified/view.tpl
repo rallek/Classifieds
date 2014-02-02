@@ -47,7 +47,7 @@
                 {gt text='Picture'}
             </th>           
 			<th id="hTitle" scope="col" class="z-left">
-                {sortlink __linktext='Title' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='title' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
+                {sortlink __linktext='Classifieds' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='title' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}
             </th>
             <th id="hPrice" scope="col" class="z-right">
                 {sortlink __linktext='Price' currentsort=$sort modname='Classifieds' type='user' func='view' ot='classified' sort='price' sortdir=$sdir all=$all own=$own catidMain=$catIdListMainString workflowState=$workflowState kind=$kind searchterm=$searchterm pageSize=$pageSize terms=$terms}

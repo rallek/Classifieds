@@ -1,5 +1,5 @@
 {* purpose of this template: classifieds view filter form in user area *}
-{checkpermissionblock component='Classifieds:Classified:' instance='::' level='ACCESS_EDIT'}
+{checkpermissionblock component='Classifieds:Classified:' instance='::' level='ACCESS_READ'}
 {assign var='objectType' value='classified'}
 <form action="{$modvars.ZConfig.entrypoint|default:'index.php'}" method="get" id="classifiedsClassifiedQuickNavForm" class="classifieds-quicknav">
     <fieldset>

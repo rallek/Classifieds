@@ -68,7 +68,7 @@ make a link of the title:
 **ToDo** in a next step we will arrange all the table items propperly in one column
 
 * move Kind, description and enddate into column title and arrange with span the classes z-bold, z-sub and z-normal. Move pictures at the first column
-* clean the headlines (Sorting of pictures makes no sence)
+* clean the headlines (Sorting of pictures makes no sence), make the Title Headine Classifieds
 * chepermissionsblock around the action list with admin rights
 * delete ``<p class="z-informationmsg">{gt text='a module for goods you want to sell or you want to buy'}</p>``
 
