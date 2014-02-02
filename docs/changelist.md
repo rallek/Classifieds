@@ -97,6 +97,9 @@ and
 	{/if}
 ````
 
+### watermark hide
+via div class z-hide 
+
 ## user display.tpl
 includig dummy.png
 

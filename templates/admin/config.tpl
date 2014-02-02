@@ -67,36 +67,38 @@
 					{/if}
 
                 </div>
-                <div class="z-formrow">
-                    {gt text='you can use the wartermark option for pictures' assign='toolTip'}
-                    {formlabel for='useWatermark' __text='Use watermark' cssClass='classifieds-form-tooltips ' title=$toolTip}
-                        {formcheckbox id='useWatermark' group='config'}
-                </div>
-                <div class="z-formrow">
-                    {gt text='choose the kind of watermark' assign='toolTip'}
-                    {formlabel for='typWatermark' __text='Typ watermark' cssClass='classifieds-form-tooltips ' title=$toolTip}
-                        {formdropdownlist id='typWatermark' group='config' __title='Choose the typ watermark'}
-                </div>
-                <div class="z-formrow">
-                    {gt text='the picture for the overlay as a watermark' assign='toolTip'}
-                    {formlabel for='watermarkPicture' __text='Watermark picture' cssClass='classifieds-form-tooltips ' title=$toolTip}
-                        {formtextinput id='watermarkPicture' group='config' maxLength=255 __title='Enter the watermark picture.'}
+				<div class="z-hide">
+					<div class="z-formrow">
+						{gt text='you can use the wartermark option for pictures' assign='toolTip'}
+						{formlabel for='useWatermark' __text='Use watermark' cssClass='classifieds-form-tooltips ' title=$toolTip}
+							{formcheckbox id='useWatermark' group='config'}
+					</div>
+					<div class="z-formrow">
+						{gt text='choose the kind of watermark' assign='toolTip'}
+						{formlabel for='typWatermark' __text='Typ watermark' cssClass='classifieds-form-tooltips ' title=$toolTip}
+							{formdropdownlist id='typWatermark' group='config' __title='Choose the typ watermark'}
+					</div>
+					<div class="z-formrow">
+						{gt text='the picture for the overlay as a watermark' assign='toolTip'}
+						{formlabel for='watermarkPicture' __text='Watermark picture' cssClass='classifieds-form-tooltips ' title=$toolTip}
+							{formtextinput id='watermarkPicture' group='config' maxLength=255 __title='Enter the watermark picture.'}
+							
+													
 						
-												
-					
-					{if $modvars.Classifieds.watermarkPicture ne ''}
-                      {thumb image=$modvars.Classifieds.watermarkPicture width=50 height=50 mode='inset' tag=true}
-					{/if}
-                  
+						{if $modvars.Classifieds.watermarkPicture ne ''}
+						  {thumb image=$modvars.Classifieds.watermarkPicture width=50 height=50 mode='inset' tag=true}
+						{/if}
+					  
+							
+							
 						
-						
-					
-                </div>
-                <div class="z-formrow">
-                    {gt text='text for watermarking (max 15 characters)' assign='toolTip'}
-                    {formlabel for='textWatermark' __text='Text watermark' cssClass='classifieds-form-tooltips ' title=$toolTip}
-                        {formtextinput id='textWatermark' group='config' maxLength=255 __title='Enter the text watermark.'}
-                </div>
+					</div>
+					<div class="z-formrow">
+						{gt text='text for watermarking (max 15 characters)' assign='toolTip'}
+						{formlabel for='textWatermark' __text='Text watermark' cssClass='classifieds-form-tooltips ' title=$toolTip}
+							{formtextinput id='textWatermark' group='config' maxLength=255 __title='Enter the text watermark.'}
+					</div>
+				</div>
             </fieldset>
 
             <div class="z-buttons z-formbuttons">
