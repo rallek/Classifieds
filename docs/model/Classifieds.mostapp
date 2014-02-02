@@ -24,7 +24,7 @@ application Classifieds {
 		generateXmlTemplates false
 		generateJsonTemplates false
 		generateKmlTemplates false
-		generateOnlyBaseClasses true
+		generateOnlyBaseClasses false
 		generateTests false
 		skipFiles "README.md,CHANGELOG.md"
 	}
