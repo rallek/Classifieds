@@ -27,26 +27,32 @@
         <dt>{gt text='Fon'}</dt>
         <dd>{$classified.fon}</dd>
         <dt>{gt text='Picture'}</dt>
-        <dd>{if $classified.picture ne ''}
-          <a href="{$classified.pictureFullPathURL}" title="{$classified->getTitleFromDisplayPattern()|replace:"\"":""}"{if $classified.pictureMeta.isImage} rel="imageviewer[classified]"{/if}>
-          {if $classified.pictureMeta.isImage}
-              {thumb image=$classified.pictureFullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture tag=true img_alt=$classified->getTitleFromDisplayPattern()}
-          {else}
-              {gt text='Download'} ({$classified.pictureMeta.size|classifiedsGetFileSize:$classified.pictureFullPath:false:false})
-          {/if}
-          </a>
-        {else}&nbsp;{/if}
+        <dd>
+			{if $classified.picture ne ''}
+			  <a href="{$classified.pictureFullPathURL}" title="{$classified->getTitleFromDisplayPattern()|replace:"\"":""}"{if $classified.pictureMeta.isImage} rel="imageviewer[classified]"{/if}>
+			  {if $classified.pictureMeta.isImage}
+				  {thumb image=$classified.pictureFullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture tag=true img_alt=$classified->getTitleFromDisplayPattern()}
+			  {else}
+				  {gt text='Download'} ({$classified.pictureMeta.size|classifiedsGetFileSize:$classified.pictureFullPath:false:false})
+			  {/if}
+			  </a>
+			{else}
+				{thumb image=$modvars.Classifieds.pictureDummy preset=$classifiedThumbPresetPicture mode='inset' tag=true}
+			{/if}
         </dd>
         <dt>{gt text='Picture2'}</dt>
-        <dd>{if $classified.picture2 ne ''}
-          <a href="{$classified.picture2FullPathURL}" title="{$classified->getTitleFromDisplayPattern()|replace:"\"":""}"{if $classified.picture2Meta.isImage} rel="imageviewer[classified]"{/if}>
-          {if $classified.picture2Meta.isImage}
-              {thumb image=$classified.picture2FullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture2 tag=true img_alt=$classified->getTitleFromDisplayPattern()}
-          {else}
-              {gt text='Download'} ({$classified.picture2Meta.size|classifiedsGetFileSize:$classified.picture2FullPath:false:false})
-          {/if}
-          </a>
-        {else}&nbsp;{/if}
+        <dd>
+			{if $classified.picture2 ne ''}
+			  <a href="{$classified.picture2FullPathURL}" title="{$classified->getTitleFromDisplayPattern()|replace:"\"":""}"{if $classified.picture2Meta.isImage} rel="imageviewer[classified]"{/if}>
+			  {if $classified.picture2Meta.isImage}
+				  {thumb image=$classified.picture2FullPath objectid="classified-`$classified.id`" preset=$classifiedThumbPresetPicture2 tag=true img_alt=$classified->getTitleFromDisplayPattern()}
+			  {else}
+				  {gt text='Download'} ({$classified.picture2Meta.size|classifiedsGetFileSize:$classified.picture2FullPath:false:false})
+			  {/if}
+			  </a>
+			{else}				
+				{thumb image=$modvars.Classifieds.pictureDummy preset=$classifiedThumbPresetPicture2 mode='inset' tag=true}
+			{/if}
         </dd>
         <dt>{gt text='Classified start'}</dt>
         <dd>{$classified.classifiedStart|dateformat:'datetimebrief'}</dd>

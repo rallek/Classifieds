@@ -86,5 +86,21 @@ and
 	{/if}
 ````
 
+## user display.tpl
+includig dummy.png
+
+inside the dd of the pictures we include the pictures:
+````
+	{else}
+		{thumb image=$modvars.Classifieds.pictureDummy preset=$classifiedThumbPresetPicture mode='inset' tag=true}
+	{/if}
+````
+and
+````
+	{else}
+		{thumb image=$modvars.Classifieds.pictureDummy preset=$classifiedThumbPresetPicture2 mode='inset' tag=true}
+	{/if}
+````
+
 
  
