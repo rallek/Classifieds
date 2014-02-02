@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Zikula 1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-02 19:48+0000\n"
+"PO-Revision-Date: 2014-02-02 21:24+0100\n"
+"Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+#: javascript/Classifieds_validation.js:65
+msgid "No spaces"
+msgstr "Keine Leerzeichen"
+
+#: javascript/Classifieds_validation.js:70
+msgid "Please select a valid file extension."
+msgstr "Bitte eine Datei mit gültiger Dateiendung auswählen"
+
+#: javascript/Classifieds_validation.js:81
+msgid "Please select a value in the future."
+msgstr "Bitte ein Datum in der Zukunft wählen."
+
+#: javascript/Classifieds_validation.js:87
+msgid "The start must be before the end."
+msgstr "Anfang muss vor dem Ende liegen."
+
+#: javascript/Classifieds.js:170
+msgid "Error"
+msgstr "Fehler"
+
+#: javascript/Classifieds.js:175
+msgid "Success"
+msgstr "Erfolg"
+
+#: javascript/Classifieds_editFunctions.js:37
+msgid "No date set."
+msgstr "Kein Datum gesetzt."
