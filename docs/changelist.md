@@ -108,5 +108,23 @@ and
 	{/if}
 ````
 
+## image.php
+we make the picsices customizable. Copy from base ``Classifieds\lib\Classifieds\Util\Base\Image.php``
+````
+    public function getCustomPreset($objectType = '', $fieldName = '', $presetName = '', $context = '', $args = array())
+    {
+	...
+	}
+````
+into the custom class ``Classifieds\lib\Classifieds\Util\Image.php`` and modify the settings:
+````
+	if ($args['action'] == 'view') {
+		$presetData['width'] = ModUtil::getVar('Classifieds', 'thumbPictureWidth', 64); //32;
+		$presetData['height'] = ModUtil::getVar('Classifieds', 'thumbPictureHeight', 64); //20;
+	} elseif ($args['action'] == 'display') {
+		$presetData['width'] = ModUtil::getVar('Classifieds', 'pictureWidth', 200); //250;
+		$presetData['height'] = ModUtil::getVar('Classifieds', 'pictureHeight', 200); //150;
+````
+
 
  
