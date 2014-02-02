@@ -149,7 +149,8 @@
             {gt text='You have to accept the terms and conditions. Otherwhise your classified will not published.' assign='toolTip'}
             {formlabel for='terms' __text='Terms' mandatorysym='1' cssClass='classifieds-form-tooltips' title=$toolTip}
             {formcheckbox group='classified' id='terms' readOnly=false __title='terms ?' cssClass='required' }
-            {classifiedsValidationError id='terms' class='required'}
+            {classifiedsValidationError id='terms' class='required'} 
+			<a href="{$modvars.Classifieds.termsLink}" target="blank">{gt text="terms and conditions"}</a> {$modvars.Classifieds.termsLink}...
         </div>
     </fieldset>
     
