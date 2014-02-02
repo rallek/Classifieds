@@ -111,7 +111,7 @@ application Classifieds {
 						},
 						textVar termsLink {
 							documentation "here we need a link to the terms and conditions"
-							value "index.php"
+							value "/index.php"
 							maxLength 255
 						},
 						intVar pictureFileSize {
@@ -136,7 +136,7 @@ application Classifieds {
 						},
 						filePathVar pictureDummy {
 							documentation "a dummy picture if the user is not uploading one"
-							value "/images/dummy.png"
+							value "modules/Classifieds/images/dummy.png"
 						},
 						boolVar useWatermark {
 							documentation "you can use the wartermark option for pictures"
@@ -152,7 +152,7 @@ application Classifieds {
 						},
 						filePathVar watermarkPicture {
 							documentation "the picture for the overlay as a watermark"
-							value "/images/watermark.png"
+							value "modules/Classifieds/images/watermark.png"
 						},
 						textVar textWatermark {
 							documentation "text for watermarking (max 15 characters)"

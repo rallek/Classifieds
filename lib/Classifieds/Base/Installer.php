@@ -47,16 +47,16 @@ class Classifieds_Base_Installer extends Zikula_AbstractInstaller
         // set up all our vars with initial values
         $this->setVar('pageSize', 20);
         $this->setVar('defaultPeriod', 60);
-        $this->setVar('termsLink', 'index.php');
+        $this->setVar('termsLink', '/index.php');
         $this->setVar('pictureFileSize', 204800);
         $this->setVar('pictureHeight', 200);
         $this->setVar('pictureWidth', 200);
         $this->setVar('thumbPictureHeight', 64);
         $this->setVar('thumbPictureWidth', 64);
-        $this->setVar('pictureDummy', '/images/dummy.png');
+        $this->setVar('pictureDummy', 'modules/Classifieds/images/dummy.png');
         $this->setVar('useWatermark', false);
         $this->setVar('typWatermark',  'text' );
-        $this->setVar('watermarkPicture', '/images/watermark.png');
+        $this->setVar('watermarkPicture', 'modules/Classifieds/images/watermark.png');
         $this->setVar('textWatermark', 'copyright');
     
         $categoryRegistryIdsPerEntity = array();
