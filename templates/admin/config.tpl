@@ -62,6 +62,10 @@
                     {gt text='a dummy picture if the user is not uploading one' assign='toolTip'}
                     {formlabel for='pictureDummy' __text='Picture dummy' cssClass='classifieds-form-tooltips ' title=$toolTip}
                         {formtextinput id='pictureDummy' group='config' maxLength=255 __title='Enter the picture dummy.'}
+					{if $modvars.Classifieds.pictureDummy ne ''}
+                      {thumb image=$modvars.Classifieds.pictureDummy width=100 height=100 mode='inset' tag=true}
+					{/if}
+
                 </div>
                 <div class="z-formrow">
                     {gt text='you can use the wartermark option for pictures' assign='toolTip'}
@@ -77,6 +81,16 @@
                     {gt text='the picture for the overlay as a watermark' assign='toolTip'}
                     {formlabel for='watermarkPicture' __text='Watermark picture' cssClass='classifieds-form-tooltips ' title=$toolTip}
                         {formtextinput id='watermarkPicture' group='config' maxLength=255 __title='Enter the watermark picture.'}
+						
+												
+					
+					{if $modvars.Classifieds.watermarkPicture ne ''}
+                      {thumb image=$modvars.Classifieds.watermarkPicture width=50 height=50 mode='inset' tag=true}
+					{/if}
+                  
+						
+						
+					
                 </div>
                 <div class="z-formrow">
                     {gt text='text for watermarking (max 15 characters)' assign='toolTip'}

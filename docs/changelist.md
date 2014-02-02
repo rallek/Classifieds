@@ -7,7 +7,7 @@ I try to record all my changes to be able to update easily if MOST generates a n
 ### calculate the future date default
 
 change 
-````formdateinput group='classified' id='classifiedEnd' mandatory=true __title='Enter the classified end of the classified' includeTime=true defaultValue='now' cssClass='required validate-DateTime-future validate-daterange-classified' }````
+````formdateinput group='classified' id='classifiedEnd' mandatory=true __title='Enter the classified end of the classified' includeTime=true defaultValue='now' cssClass='required validate-DateTime-future ' }````
 into 
 ````{formdateinput group='classified' id='classifiedEnd' mandatory=true __title='Enter the classified end of the classified' includeTime=true defaultValue='custom' cssClass='required validate-DateTime-future' initDate="+`$modvars.Classifieds.defaultPeriod` day" }````
 
@@ -71,6 +71,20 @@ Template work:
 * clear the search selection for usefull content
 * set multicategories from 5 to 1
 * add a br behind kind and search
+
+## config.tpl
+to show the watermark and dummy pictures we include the following code:
+````
+	{if $modvars.Classifieds.watermarkPicture ne ''}
+	  {thumb image=$modvars.Classifieds.watermarkPicture width=50 height=50 mode='inset' tag=true}
+	{/if}
+````
+and
+````
+	{if $modvars.Classifieds.pictureDummy ne ''}
+	  {thumb image=$modvars.Classifieds.pictureDummy width=100 height=100 mode='inset' tag=true}
+	{/if}
+````
 
 
  
