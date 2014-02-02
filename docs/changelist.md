@@ -37,6 +37,12 @@ $this->allowedFileSizes['picture'] = ModUtil::getVar('Classifieds', 'pictureFile
 $this->allowedFileSizes['picture2'] = ModUtil::getVar('Classifieds', 'pictureFileSize', 102400);
 ````
 
+### Terms and Condition Link
+add the line in the section of terms and conditions:
+````
+<a href="{$modvars.Classifieds.termsLink}" target="blank">{gt text="terms and conditions"}</a> 
+````
+
 ## user view.tpl
 
 ### Access Level changes
