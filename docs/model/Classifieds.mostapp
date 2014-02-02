@@ -10,7 +10,7 @@ application Classifieds {
 	generatorSettings {
 		settingsContainer targetCoreVersion ZK136
 		generateMailzApi false
-		generateListBlock false
+		generateListBlock true
 		generateModerationBlock false
 		generateListContentType true
 		generateDetailContentType false
