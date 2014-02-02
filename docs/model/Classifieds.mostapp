@@ -4,7 +4,7 @@ application Classifieds {
 	author "Ralf Koester"
 	email "ralf@familie-koester.de"
 	url "http://support.zikula.de"
-	version "0.2.5"
+	version "0.3.0"
 	prefix clfs
 	modelPath ""
 	generatorSettings {
@@ -136,6 +136,7 @@ application Classifieds {
 						},
 						filePathVar pictureDummy {
 							documentation "a dummy picture if the user is not uploading one"
+							value "/images/dummy.png"
 						},
 						boolVar useWatermark {
 							documentation "you can use the wartermark option for pictures"
@@ -151,11 +152,12 @@ application Classifieds {
 						},
 						filePathVar watermarkPicture {
 							documentation "the picture for the overlay as a watermark"
-							value "/images/watermark.jpg"
+							value "/images/watermark.png"
 						},
 						textVar textWatermark {
 							documentation "text for watermarking (max 15 characters)"
-							maxLength 15
+							value copyright
+							maxLength 30
 						}
 					}
 				}
