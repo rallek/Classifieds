@@ -26,7 +26,7 @@
                         {gt text='Categories' assign='categoryLabel'}
                         {assign var='categorySelectorName' value='catids'}
                         {assign var='categorySelectorId' value='catids__'}
-                        {assign var='categorySelectorSize' value='5'}
+                        {assign var='categorySelectorSize' value='1'}
                     {/if}
                         <label for="{$categorySelectorId}{$propertyName}">{$categoryLabel}</label>
                         &nbsp;
@@ -42,7 +42,7 @@
                 {foreach item='option' from=$workflowStateItems}
                 <option value="{$option.value}"{if $option.title ne ''} title="{$option.title|safetext}"{/if}{if $option.value eq $workflowState} selected="selected"{/if}>{$option.text|safetext}</option>
                 {/foreach}
-                </select>
+                </select></br>
         {/if}
         {if !isset($kindFilter) || $kindFilter eq true}
                 <label for="kind">{gt text='Kind'}</label>
@@ -51,7 +51,7 @@
                 {foreach item='option' from=$kindItems}
                 <option value="{$option.value}"{if $option.title ne ''} title="{$option.title|safetext}"{/if}{if $option.value eq $kind} selected="selected"{/if}>{$option.text|safetext}</option>
                 {/foreach}
-                </select>
+                </select></br>
         {/if}
         {if !isset($searchFilter) || $searchFilter eq true}
                 <label for="searchTerm">{gt text='Search'}</label>
@@ -62,21 +62,21 @@
                 &nbsp;
                 <select id="sortBy" name="sort">
                     <option value="id"{if $sort eq 'id'} selected="selected"{/if}>{gt text='Id'}</option>
-                    <option value="workflowState"{if $sort eq 'workflowState'} selected="selected"{/if}>{gt text='Workflow state'}</option>
+                   <!--  <option value="workflowState"{if $sort eq 'workflowState'} selected="selected"{/if}>{gt text='Workflow state'}</option> -->
                     <option value="title"{if $sort eq 'title'} selected="selected"{/if}>{gt text='Title'}</option>
                     <option value="kind"{if $sort eq 'kind'} selected="selected"{/if}>{gt text='Kind'}</option>
-                    <option value="description"{if $sort eq 'description'} selected="selected"{/if}>{gt text='Description'}</option>
+                    <!-- <option value="description"{if $sort eq 'description'} selected="selected"{/if}>{gt text='Description'}</option> -->
                     <option value="price"{if $sort eq 'price'} selected="selected"{/if}>{gt text='Price'}</option>
-                    <option value="email"{if $sort eq 'email'} selected="selected"{/if}>{gt text='Email'}</option>
+                    <!-- <option value="email"{if $sort eq 'email'} selected="selected"{/if}>{gt text='Email'}</option>
                     <option value="fon"{if $sort eq 'fon'} selected="selected"{/if}>{gt text='Fon'}</option>
                     <option value="picture"{if $sort eq 'picture'} selected="selected"{/if}>{gt text='Picture'}</option>
                     <option value="picture2"{if $sort eq 'picture2'} selected="selected"{/if}>{gt text='Picture2'}</option>
-                    <option value="classifiedStart"{if $sort eq 'classifiedStart'} selected="selected"{/if}>{gt text='Classified start'}</option>
+                    <option value="classifiedStart"{if $sort eq 'classifiedStart'} selected="selected"{/if}>{gt text='Classified start'}</option> -->
                     <option value="classifiedEnd"{if $sort eq 'classifiedEnd'} selected="selected"{/if}>{gt text='Classified end'}</option>
-                    <option value="terms"{if $sort eq 'terms'} selected="selected"{/if}>{gt text='Terms'}</option>
+                    <!-- <option value="terms"{if $sort eq 'terms'} selected="selected"{/if}>{gt text='Terms'}</option>
                     <option value="createdDate"{if $sort eq 'createdDate'} selected="selected"{/if}>{gt text='Creation date'}</option>
                     <option value="createdUserId"{if $sort eq 'createdUserId'} selected="selected"{/if}>{gt text='Creator'}</option>
-                    <option value="updatedDate"{if $sort eq 'updatedDate'} selected="selected"{/if}>{gt text='Update date'}</option>
+                    <option value="updatedDate"{if $sort eq 'updatedDate'} selected="selected"{/if}>{gt text='Update date'}</option> -->
                 </select>
                 <select id="sortDir" name="sortdir">
                     <option value="asc"{if $sdir eq 'asc'} selected="selected"{/if}>{gt text='ascending'}</option>

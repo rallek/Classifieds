@@ -65,4 +65,11 @@ make a link of the title:
 ````{include file='user/classified/view_quickNav.tpl' all=$all own=$own}{* see template file for available options *}````
 change to
 ````{include file='user/classified/view_quickNav.tpl' all=$all own=$own workflowStateFilter=false termsFilter=false pageSizeSelector=false}{* see template file for available options *}````
+
+Template work:
+* clear the search selection for usefull content
+* set multicategories from 5 to 1
+* add a br behind kind and search
+
+
  
